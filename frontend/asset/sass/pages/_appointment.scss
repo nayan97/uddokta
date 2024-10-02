@@ -1,0 +1,82 @@
+
+@use "../base/" as *;
+@use "../partials/" as *;
+
+
+.appointment{
+    padding: 7.5rem 0;
+    .appointment-wrap{
+        .section-heading{
+            display: flex;
+            justify-content: center;
+        }
+        .heading{text-align: center;}
+
+        .video-wrap{
+            border-radius: 40px;
+            border: 3px solid $primary;
+            margin-bottom: 5rem;
+            .ratio{
+                border-radius: 36px;
+                border: 5px solid $secondary;
+                overflow: hidden;
+                
+            }
+        }
+
+        .form-control{
+            padding: .85rem 1.5rem;
+        }
+        .btn{width: 300px;}
+
+
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .appointment{
+        padding: 5.5rem 0;  
+    }
+}
+
+@media (max-width: 992px) {
+    .appointment{
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .appointment{
+        padding: 3rem 0;
+    }
+}
+
+
+
+@media (max-width: 576px) {
+    .appointment{
+        padding: 2rem .625rem 4rem .625rem;
+        .appointment-wrap{
+    
+            .video-wrap{
+                border-radius: 20px;
+                border: 2px solid $primary;
+                margin-bottom: 3rem;
+                .ratio{
+                    border-radius: 18px;
+                    border: 3px solid $secondary;
+                    overflow: hidden;
+                    
+                }
+            }
+    
+            .form-heading{font-size: 18px;}
+            .form-control{
+                padding: .5rem 1rem;
+                font-size: 14px;
+            }
+        }
+    }
+
+}

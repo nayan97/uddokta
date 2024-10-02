@@ -1,0 +1,23 @@
+@use "../base/" as *;
+@use "../partials/" as *;
+
+
+.testimonials{
+    padding: 7.5rem 0;
+}
+
+@media (max-width: 1200px) {
+    .testimonials{
+        padding: 5.5rem 0;
+    }
+}
+@media (max-width: 992px) {
+    .testimonials{
+        padding: 4rem 0;
+    }
+}
+@media (max-width: 576px) {
+    .testimonials{
+        padding: 3rem 0;
+    }
+}

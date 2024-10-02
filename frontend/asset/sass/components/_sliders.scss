@@ -1,0 +1,36 @@
+@use "../base/index" as *;
+@use "../partials/variables" as *;
+
+
+// product slider start 5 items
+.slider-container {
+    position: relative;
+    margin: 0 auto;
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease;
+        .portfolio-card {
+            flex: 0 0 calc(25% - 10px); /* Adjust card width minus margin */
+            max-width: calc(25% - 10px); /* 100% / 5 = 20% */
+            box-sizing: border-box;
+        }
+    }
+
+    .prev-btn, .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #0087F680;
+        color: white;
+        border: none;
+        padding: 2px 6px 6px 6px ;
+        cursor: pointer;
+        font-size: 32px;
+    }
+    .prev-btn {
+        left: 0;
+    }
+    .next-btn {
+        right: 0;
+    }
+}
