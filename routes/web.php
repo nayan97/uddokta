@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
-// use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Admin\PersonalInfoController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Seller\DashboardController as SellerDashboardController;
 use App\Http\Controllers\Customer\DashboardController as CustomerDashboardController;
@@ -25,7 +26,7 @@ use App\Http\Controllers\Affiliate\DashboardController as AffiliateDashboardCont
 Route::group(['middleware'=> ['login']], function(){
     Route::get('admin/login',[LoginController::class,'login'])->name('admin.login');
     Route::post('login',[LoginController::class,'login_submit']);
-    Route::get('login','HomeController@login')->name('login');
+    // Route::get('login','HomeController@login')->name('login');
 });
 Route::get('logout',function(){
     Auth::logout();
@@ -38,6 +39,7 @@ Route::get('unauthorized', function () {
 Route::group(['middleware'=> ['auth', 'admin'], 'as'=>'admin.','prefix'=>'admin'], function(){
     Route::get('dashboard',[AdminDashboardController::class,'dashboard'])->name('dashboard');
 
+    Route::resource('personalinfo','App\Http\Controllers\Admin\PersonalInfoController');
     Route::resource('sitesetting','App\Http\Controllers\Admin\SiteSettingController');
     Route::resource('blog_category','App\Http\Controllers\Admin\BlogCategoryController');
     Route::resource('blog','App\Http\Controllers\Admin\BlogController');
@@ -51,16 +53,6 @@ Route::group(['middleware'=> ['auth', 'admin'], 'as'=>'admin.','prefix'=>'admin'
     Route::resource('user_message','App\Http\Controllers\Admin\UserMessageController');
     Route::get('newsletter/send','App\Http\Controllers\Admin\UserMessageController@newsletterSend')->name('newsletter.send');
     Route::post('newsletter/submit','App\Http\Controllers\Admin\UserMessageController@newsletterSubmit')->name('newsletter.submit');
-
-
-
-
-
-
-
-
-
-
 
 
 });
@@ -87,7 +79,8 @@ Route::group(['middleware'=> ['auth', 'seller'], 'as'=>'seller.','prefix'=>'sell
 });
 
 
-Route::get('/','App\Http\Controllers\Frontend\HomeController@home')->name('home');
+
+Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/about','App\Http\Controllers\Frontend\HomeController@about')->name('about');
 Route::get('/service','App\Http\Controllers\Frontend\HomeController@service')->name('service');
 Route::get('/service-detail/{slug}','App\Http\Controllers\Frontend\HomeController@serviceDetails')->name('service.details');

@@ -31,6 +31,11 @@
                 </a>
 
             </li>
+            <li class=" nav-item"><a href="{{ route('admin.personalinfo.index') }}"><i class="feather icon-home">
+            </i><span class="menu-title" data-i18n="Dashboard">Personal Info</span>
+        </a>
+
+    </li>
             <li class=" nav-item"><a href="{{ route('admin.blog_category.index') }}"><i class="feather icon-home">
                     </i><span class="menu-title" data-i18n="Dashboard">Blog Category</span>
                 </a>
