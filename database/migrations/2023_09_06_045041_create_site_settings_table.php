@@ -27,8 +27,10 @@ return new class extends Migration
             $table->string('whatsapp')->nullable();
             $table->string('bymecoffe')->nullable();
             $table->string('years_of_experience')->nullable();
-            $table->string('customers')->nullable();
+            $table->string('happy_client')->nullable();
             $table->string('projects')->nullable();
+            $table->string('all_client')->nullable();
+            $table->string('coffe')->nullable();
             $table->string('awards')->nullable();
             $table->text('map')->nullable();
             $table->string('meta_title')->nullable();

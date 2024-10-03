@@ -144,14 +144,26 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="first-name-vertical">Total Customers</label>
-                                                        <input type="text" id="first-name-vertical" class="form-control" name="customers" value="{{ $data->customers ??'' }}" placeholder="Customers" >
+                                                        <label for="first-name-vertical">Happy Client</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="happy_client" value="{{ $data->happy_client ??'' }}" placeholder="Happy client" >
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="first-name-vertical">Projects</label>
                                                         <input type="text" id="first-name-vertical" class="form-control" name="projects" value="{{ $data->projects ??'' }}" placeholder="Projects" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">All Client</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="all_client" value="{{ $data->all_client ??'' }}" placeholder="All Client" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Coffe Qty</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="coffe" value="{{ $data->coffe ??'' }}" placeholder="By me a coffe" >
                                                     </div>
                                                 </div>
                                                 <div class="col-6">

@@ -65,8 +65,8 @@
                                 <div class="icon"><img src="{{ asset('frontend/asset/img/alimnet-box-icon2.png') }}" alt=""></div>
                                 <div class="box-txt-two">
                                     <span>Happy Clients</span>
-                                    <h3 class="title" data-count="{{$setting->customers}}">{{$setting->customers}}</h3>
-                                    <span>k</span>
+                                    <h3 class="title" data-count="{{$setting->happy_client}}">{{$setting->happy_client}}</h3>
+                                    <span></span>
                                 </div>
                             </div>
 
@@ -97,7 +97,7 @@
 
                             <div class="experience-year position-absolute rounded-circle p-3">
                                 <div class="mx-auto">
-                                    <h2 class="sub-heading text-center mb-1"><span>{{$setting->customers}}</span>k</h2>
+                                    <h2 class="sub-heading text-center mb-1"><span>{{$setting->years_of_experience}}</span></h2>
                                     <p class="text text-capitalize text-center">Years of experience</p>
                                 </div>
                             </div>
@@ -250,25 +250,25 @@
             <div class="row g-4 gx-sm-3 gx-lg-5 row-cols-2 row-cols-md-4">
                 <div class="col">
                     <div class="counter-box d-flex align-items-center">
-                        <h1 class="value index-counter-value" data-target="870">0</h1>
+                        <h1 class="value index-counter-value" data-target="{{$setting->projects}}">0</h1>
                         <h5 class="property">Projects Completed</h5>
                     </div>
                 </div>
                 <div class="col">
                     <div class="counter-box d-flex align-items-center">
-                        <h1 class="value index-counter-value" data-target="650">0</h1>
+                        <h1 class="value index-counter-value" data-target="{{$setting->happy_client}}">0</h1>
                         <h5 class="property">Our Happy Clients</h5>
                     </div>
                 </div>
                 <div class="col">
                     <div class="counter-box d-flex align-items-center">
-                        <h1 class="value index-counter-value" data-target="320">0</h1>
+                        <h1 class="value index-counter-value" data-target="{{$setting->coffe}}">0</h1>
                         <h5 class="property">Cup Of Coffee For Me</h5>
                     </div>
                 </div>
                 <div class="col">
                     <div class="counter-box d-flex align-items-center">
-                        <h1 class="value index-counter-value" data-target="780">0</h1>
+                        <h1 class="value index-counter-value" data-target="{{$setting->all_client}}">0</h1>
                         <h5 class="property">Clients Worked With Me</h5>
                     </div>
                 </div>
@@ -490,7 +490,7 @@
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro minus dolorem dolores ut et iusto.</p>
                         </div>
 
-                        <span class="card-number">01</span>
+                        <span class="card-number">02</span>
                     </div>
 
                     <div class="working-card card border-0">
@@ -503,7 +503,7 @@
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro minus dolorem dolores ut et iusto.</p>
                         </div>
 
-                        <span class="card-number">01</span>
+                        <span class="card-number">03</span>
                     </div>
 
                 </div>

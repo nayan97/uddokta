@@ -45,8 +45,10 @@ class SiteSettingController extends Controller
             $sitesetting->whatsapp = $request->whatsapp;
             $sitesetting->bymecoffe = $request->bymecoffe;
             $sitesetting->years_of_experience = $request->years_of_experience;
-            $sitesetting->customers = $request->customers;
+            $sitesetting->happy_client = $request->happy_client;
             $sitesetting->projects = $request->projects;
+            $sitesetting->all_client = $request->all_client;
+            $sitesetting->coffe = $request->coffe;
             $sitesetting->awards = $request->awards;
             $sitesetting->map = $request->map;
             $sitesetting->meta_title = $request->meta_title;
@@ -125,8 +127,10 @@ class SiteSettingController extends Controller
             $sitesetting->whatsapp = $request->whatsapp;
             $sitesetting->bymecoffe = $request->bymecoffe;
             $sitesetting->years_of_experience = $request->years_of_experience;
-            $sitesetting->customers = $request->customers;
+            $sitesetting->happy_client = $request->happy_client;
             $sitesetting->projects = $request->projects;
+            $sitesetting->all_client = $request->all_client;
+            $sitesetting->coffe = $request->coffe;
             $sitesetting->awards = $request->awards;
             $sitesetting->map = $request->map;
             $sitesetting->meta_title = $request->meta_title;
