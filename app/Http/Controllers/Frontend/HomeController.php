@@ -31,9 +31,10 @@ class HomeController extends Controller
         $projects=Project::where('status',1)->get();
         $clients=Client::where('status',1)->get();
         $testimonials=Testimonial::where('status',1)->get();
+        $skills=MySkill::where('status',1)->latest()->take(3)->get();
         $teams=Team::where('status',1)->get();
         $blogs=Blog::where('status',1)->latest()->get()->take(3);
-        return view('welcome',compact('setting','services','projects','clients','testimonials','teams','blogs','infos'));
+        return view('welcome',compact('setting','services','projects','clients','testimonials','teams','blogs','infos','skills'));
 
 
     }
@@ -42,7 +43,7 @@ class HomeController extends Controller
         $setting=SiteSetting::first();
         $teams=Team::where('status',1)->get();
         $clients=Client::where('status',1)->get();
-        $skills=MySkill::where('status',1)->latest()->take(3)->get();
+        
         $testimonials=Testimonial::where('status',1)->latest()->get();
         $blogs=Blog::where('status',1)->latest()->get()->take(3);
         return view('about',compact('setting','teams','clients','testimonials','blogs'));

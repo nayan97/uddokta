@@ -202,35 +202,17 @@
                                 <!-- my skills start  -->
                                 <div class="tab-pane fade" id="pills-skills" role="tabpanel" aria-labelledby="pills-skills-tab" tabindex="0">
 
-                                    <div class="skill">
-                                        <div class="d-flex justify-content-between">
-                                            <h5>Python</h5>
-                                            <h5>70%</h5>
+                                    @foreach ( $skills as $skill )
+                                        <div class="skill">
+                                            <div class="d-flex justify-content-between">
+                                                <h5>{{$skill->name }}</h5>
+                                                <h5>{{$skill->expertise}}%</h5>
+                                            </div>
+                                            <div class="progress" role="progressbar" aria-label="my skills" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar rounded-pill" style="width: {{$skill->expertise}}%"></div>
+                                            </div>
                                         </div>
-                                        <div class="progress" role="progressbar" aria-label="my skills" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                            <div class="progress-bar rounded-pill" style="width: 70%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="skill">
-                                        <div class="d-flex justify-content-between">
-                                            <h5>Django</h5>
-                                            <h5>90%</h5>
-                                        </div>
-                                        <div class="progress" role="progressbar" aria-label="my skills" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                                            <div class="progress-bar rounded-pill" style="width: 90%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="skill">
-                                        <div class="d-flex justify-content-between">
-                                            <h5>React</h5>
-                                            <h5>80%</h5>
-                                        </div>
-                                        <div class="progress" role="progressbar" aria-label="my skills" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                            <div class="progress-bar rounded-pill" style="width: 80%"></div>
-                                        </div>
-                                    </div>
+                                    @endforeach
 
                                 </div>
                             </div>
