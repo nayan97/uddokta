@@ -8,6 +8,7 @@ use App\Models\Blog;
 use App\Models\Team;
 use App\Models\Client;
 use App\Models\Message;
+use App\Models\MySkill;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Subscribe;
@@ -41,6 +42,7 @@ class HomeController extends Controller
         $setting=SiteSetting::first();
         $teams=Team::where('status',1)->get();
         $clients=Client::where('status',1)->get();
+        $skills=MySkill::where('status',1)->latest()->take(3)->get();
         $testimonials=Testimonial::where('status',1)->latest()->get();
         $blogs=Blog::where('status',1)->latest()->get()->take(3);
         return view('about',compact('setting','teams','clients','testimonials','blogs'));
