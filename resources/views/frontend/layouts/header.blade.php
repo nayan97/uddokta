@@ -5,7 +5,7 @@
         <div class="container">
 
             <a class="navbar-brand " href="{{ route('home') }}" >
-                <img src="{{ asset('frontend/asset/img/logo.png') }}" class="object-fit-cover logo" alt="logo">
+                <img src="{{$setting->icon_dark}}" class="object-fit-cover logo" alt="logo">
             </a>
 
             <button  class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">

@@ -38,25 +38,26 @@
 
         <!-- contact start -->
         <div class="row row-cols-2 row-cols-md-4 mt-4 mt-md-5 pt-4">
-            <div class="col">
+            <div class="col-md-2">
                 <p class="text">Call Now:</p>
-                <h5 class="title mt-md-2 mt-1">+880 987 9874 965</h5>
+                <h5 class="title mt-md-2 mt-1">{{ $setting->phone }}</h5>
             </div>
-            <div class="col">
+            <div class="col-md-4">
                 <p class="text">Email Now:</p>
-                <h5 class="title mt-md-2 mt-1">hello@example.com</h5>
+                <h5 class="title mt-md-2 mt-1">{{ $setting->email }}</h5>
             </div>
-            <div class="col">
+            <div class="col-md-4">
                 <p class="text">My Location:</p>
-                <h5 class="title mt-md-2 mt-1">Dhaka, Bangladesh</h5>
+                <h5 class="title mt-md-2 mt-1">{{ $setting->address }}</h5>
             </div>
-            <div class="col">
+            <div class="col-md-2">
                 <p class="text">Follow Me:</p>
                 <ul class="social-media d-flex ">
-                    <li><a class="rounded-circle" href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a class="rounded-circle" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <!-- <li><a class="rounded-circle" href="#"><i class="fa-brands fa-linkedin"></i></a></li> -->
-                    <li><a class="rounded-circle" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a class="rounded-circle" href="{{ $setting->facebook }}"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a class="rounded-circle" href="{{ $setting->instragram }}"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a class="rounded-circle" href="{{ $setting->twitter }}"><i class="fa-brands fa-twitter"></i></a></li>
+                    <!-- <li><a class="rounded-circle" href="{{ $setting->linkedin }}"><i class="fa-brands fa-linkedin"></i></a></li> -->
+                    
                 </ul>
             </div>
         </div>
@@ -66,7 +67,7 @@
         <div class="container">
             <div class="row ">
                 <div class="col-6">
-                    <a href="#"><img src="{{ asset('frontend/asset/img/logo-white.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ $setting->icon_light }}" alt=""></a>
                 </div>
                 <div class="col-6 text-end text-white">
                     <span class="mt-2 d-block">  2024 &copy; All Rights Reserved</span>
