@@ -29,92 +29,23 @@
         <div class="container">
             <div class="row g-3 g-lg-4 g-xl-5 row-cols-1 row-cols-lg-2 services-card-wrap">
 
+                @foreach ( $services as $service)
                 <div class="col">
                     <!-- service-card start  -->
                     <div class="service-card p-sm-3 p-2 rounded d-flex border-0 position-relative">
                         <div class="ms-2 ms-sm-0 mt-sm-0 mt-3 m-sm-3">
-                            <div class="icon-bg rounded-circle"><img src="{{ asset('frontend/asset/img/service-icon1-one.png') }}" class="img-fluid" alt="..."></div>
+                            <div class="icon-bg rounded-circle"><img style="width:60px" src="{{ $service->icon}}" class="img-fluid" alt="..."></div>
                         </div>
 
                         <div class="p-3">
-                            <a href="#"><h5 class="title">Web development</h5></a>
-                            <p class="text">Donec cursus odio ac sodales hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <a href="#"><h5 class="title">{{$service->name}}</h5></a>
+                            <p class="text">{!! $service->description !!}</p>
                         </div>
-                        <span class="card-number">01</span>
+                        <span class="card-number">{{ $loop ->index + 1}}</span>
                     </div>
                 </div>
+                @endforeach
 
-                <div class="col">
-                    <!-- service-card start  -->
-                    <div class="service-card p-sm-3 p-2 rounded d-flex border-0 position-relative">
-                        <div class="ms-2 ms-sm-0 mt-sm-0 mt-3 m-sm-3">
-                            <div class="icon-bg rounded-circle"><img src="{{ asset('frontend/asset/img/service-icon2-one.png') }}" class="img-fluid" alt="..."></div>
-                        </div>
-
-                        <div class="p-3">
-                            <a href="#"><h5 class="title">Graphic Design</h5></a>
-                            <p class="text">Donec cursus odio ac sodales hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <span class="card-number">02</span>
-                    </div>
-                </div>
-
-                <div class="col">
-                     <!-- service-card start  -->
-                    <div class="service-card p-sm-3 p-2 rounded d-flex border-0 position-relative">
-                        <div class="ms-2 ms-sm-0 mt-sm-0 mt-3 m-sm-3">
-                            <div class="icon-bg rounded-circle"><img src="{{ asset('frontend/asset/img/service-icon3-one.png') }}" class="img-fluid" alt="..."></div>
-                        </div>
-
-                        <div class="p-3">
-                            <a href="#"><h5 class="title">Product Design & Develop</h5></a>
-                            <p class="text">Donec cursus odio ac sodales hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <span class="card-number">03</span>
-                    </div>
-                </div>
-                <div class="col">
-                     <!-- service-card start  -->
-                    <div class="service-card p-sm-3 p-2 rounded d-flex border-0 position-relative">
-                        <div class="ms-2 ms-sm-0 mt-sm-0 mt-3 m-sm-3">
-                            <div class="icon-bg rounded-circle"><img src="{{ asset('frontend/asset/img/service-icon4-one.png') }}" class="img-fluid" alt="..."></div>
-                        </div>
-
-                        <div class="p-3">
-                            <a href="#"><h5 class="title">Branding & Soft Indentity</h5></a>
-                            <p class="text">Donec cursus odio ac sodales hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <span class="card-number">03</span>
-                    </div>
-                </div>
-                <div class="col">
-                     <!-- service-card start  -->
-                    <div class="service-card p-sm-3 p-2 rounded d-flex border-0 position-relative">
-                        <div class="ms-2 ms-sm-0 mt-sm-0 mt-3 m-sm-3">
-                            <div class="icon-bg rounded-circle"><img src="asset/img/service-icon5-one.png" class="img-fluid" alt="..."></div>
-                        </div>
-
-                        <div class="p-3">
-                            <a href="#"><h5 class="title">Software Devlopment</h5></a>
-                            <p class="text">Donec cursus odio ac sodales hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <span class="card-number">03</span>
-                    </div>
-                </div>
-                <div class="col">
-                     <!-- service-card start  -->
-                    <div class="service-card p-sm-3 p-2 rounded d-flex border-0 position-relative">
-                        <div class="ms-2 ms-sm-0 mt-sm-0 mt-3 m-sm-3">
-                            <div class="icon-bg rounded-circle"><img src="{{ asset('frontend/asset/img/service-icon6-one.png') }}" class="img-fluid" alt="..."></div>
-                        </div>
-
-                        <div class="p-3">
-                            <a href="#"><h5 class="title">Video Motion Graphic</h5></a>
-                            <p class="text">Donec cursus odio ac sodales hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <span class="card-number">03</span>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -128,25 +59,25 @@
             <div class="row g-4 gx-sm-3 gx-lg-5 row-cols-2 row-cols-md-4">
                 <div class="col">
                     <div class="counter-box d-flex align-items-center">
-                        <h1 class="value service-counter-value" service-data-target="870">0</h1>
+                        <h1 class="value service-counter-value" service-data-target="{{$setting->projects}}">{{$setting->projects}}</h1>
                         <h5 class="property">Projects Completed</h5>
                     </div>
                 </div>
                 <div class="col">
                     <div class="counter-box d-flex align-items-center">
-                        <h1 class="value service-counter-value" service-data-target="650">0</h1>
+                        <h1 class="value service-counter-value" service-data-target="{{$setting->happy_client}}">{{$setting->happy_client}}</h1>
                         <h5 class="property">Our Happy Clients</h5>
                     </div>
                 </div>
                 <div class="col">
                     <div class="counter-box d-flex align-items-center">
-                        <h1 class="value service-counter-value" service-data-target="320">0</h1>
+                        <h1 class="value service-counter-value" service-data-target="{{$setting->coffe}}">{{$setting->coffe}}</h1>
                         <h5 class="property">Cup Of Coffee For Me</h5>
                     </div>
                 </div>
                 <div class="col">
                     <div class="counter-box d-flex align-items-center">
-                        <h1 class="value service-counter-value" service-data-target="780">0</h1>
+                        <h1 class="value service-counter-value" service-data-target="{{$setting->all_client}}">{{$setting->all_client}}</h1>
                         <h5 class="property">Clients Worked With Me</h5>
                     </div>
                 </div>
@@ -256,7 +187,7 @@
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro minus dolorem dolores ut et iusto.</p>
                         </div>
 
-                        <span class="card-number">01</span>
+                        <span class="card-number">02</span>
                     </div>
 
                     <div class="working-card card border-0">
@@ -269,7 +200,7 @@
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro minus dolorem dolores ut et iusto.</p>
                         </div>
 
-                        <span class="card-number">01</span>
+                        <span class="card-number">03</span>
                     </div>
 
                 </div>
@@ -427,26 +358,29 @@
                         <div class="carousel-inner px-3">
 
                             <!-- carousel-item start  -->
-                            <div class="carousel-item active pt-4 pb-5">
-                                <div class="testimonial-card" >
-                                    <div class="d-flex">
-                                        <div class="client-img-wrap rounded-circle p-xl-2 p-1 me-3"><img src="{{ asset('frontend/asset/img/client1-one.jpg') }}" class="rounded-circle" alt=""></div>
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <h2 class="title mb-1">Albert Walkers</h2>
-                                                <small class="text-capitalize text-primary">Our client</small>
+                            @foreach ($testimonials as $testimonial )
+                            <div class="carousel-item @if($loop->first) active @endif pt-4 pb-5">
+                                    <div class="testimonial-card" >
+                                        <div class="d-flex">
+                                            <div class="client-img-wrap rounded-circle p-xl-2 p-1 me-3"><img style="width: 60px" src="{{ $testimonial->image }}" class="rounded-circle" alt=""></div>
+                                            <div class="d-flex align-items-center">
+                                                <div>
+                                                    <h2 class="title mb-1">{{ $testimonial->name }}</h2>
+                                                    <small class="text-capitalize text-primary">Our client</small>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <p class="text mt-xl-4 mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus eveniet eligendi officia illo eaque veniam similique laudantium!</p>
+                                        <p class="text mt-xl-4 mt-3">{{ $testimonial->message}}</p>
 
-                                    <img src="{{ asset('frontend/asset/img/quote.png') }}" class="qoute" alt="">
+                                        <img src="{{ asset('frontend/asset/img/quote.png') }}" class="qoute" alt="">
+                                    </div>
                                 </div>
-                            </div>
+                                @endforeach
+                           
                             <!-- carousel-item end  -->
 
 
-                            <div class="carousel-item  pt-4 pb-5">
+                            {{-- <div class="carousel-item  pt-4 pb-5">
                                 <div class="testimonial-card" >
                                     <div class="d-flex">
                                         <div class="client-img-wrap rounded-circle p-xl-2 p-1 me-3"><img src="{{ asset('frontend/asset/img/client2-one.jpg') }}" class="rounded-circle" alt=""></div>
@@ -461,9 +395,9 @@
 
                                     <img src="{{ asset('frontend/asset/img/quote.png') }}" class="qoute" alt="">
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="carousel-item  pt-4 pb-5">
+                            {{-- <div class="carousel-item  pt-4 pb-5">
                                 <div class="testimonial-card" >
                                     <div class="d-flex">
                                         <div class="client-img-wrap rounded-circle p-xl-2 p-1 me-3"><img src="{{ asset('frontend/asset/img/client3-one.jpg') }}" class="rounded-circle" alt=""></div>
@@ -478,7 +412,7 @@
 
                                     <img src="{{ asset('frontend/asset/img/quote.png') }}" class="qoute" alt="">
                                 </div>
-                            </div>
+                            </div> --}}
 
 
 

@@ -43,7 +43,6 @@
                                             <thead>
                                                 <tr>
                                                     <th>Sl</th>
-                                                    <th>Image</th>
                                                     <th>Name</th>
                                                     <th>Designation</th>
                                                     <th>Status</th>
@@ -54,8 +53,7 @@
                                                 @foreach ($datas as $item)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td><img src="{{asset($item->image)}}" width="80px"></td>
-
+                                    
                                                     <td>{{$item->name}}</td>
                                                     <td>{{ $item->designation }}</td>
                                                     <td>

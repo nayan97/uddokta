@@ -50,7 +50,8 @@ class HomeController extends Controller
     {
         $setting=SiteSetting::first();
         $services=Service::where('status',1)->get();
-        return view('service',compact('setting','services'));
+        $testimonials=Testimonial::where('status',1)->latest()->get();
+        return view('service',compact('setting','services','testimonials'));
 
     }
     public function serviceDetails($slug)

@@ -57,16 +57,16 @@
 
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="first-name-vertical"> Message </label>
+                                                        <label for="first-name-vertical"> Video Message </label>
                                                         <textarea type="text" class="form-control" name="message" value="{{old('message')}}" placeholder="Message"></textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col-12">
+                                                {{-- <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="contact-info-vertical">Image</label>
                                                         <input type="file" id="contact-info-vertical" class="form-control" name="image">
                                                     </div>
-                                                </div>
+                                                </div> --}}
 
                                                 <div class="col-6">
                                                     <div class="form-group">
