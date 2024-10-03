@@ -132,6 +132,12 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
+                                                        <label for="first-name-vertical">By me coffe</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="bymecoffe" value="{{ $data->bymecoffe ??'' }}" placeholder="By me coffe" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
                                                         <label for="first-name-vertical">Years of Experience</label>
                                                         <input type="text" id="first-name-vertical" class="form-control" name="years_of_experience" value="{{ $data->years_of_experience ??'' }}" placeholder="Years of Experience" >
                                                     </div>

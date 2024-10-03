@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('personal_infos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('cover_photo')->nullable();
+            $table->text('profile_photo')->nullable();
             $table->string('stack');
             $table->text('intro')->nullable();
             $table->string('heading')->nullable();

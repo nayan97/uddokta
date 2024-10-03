@@ -36,45 +36,84 @@
                             <div class="card-content">
                                 <div class="card-body">
                                     @include('admin.layouts.notify')
-                                    <form class="form form-vertical" action="admin.personalinfo.store" method="POST" enctype="multipart/form-data">
+                                    <form class="form form-vertical" action="{{ route('admin.personalinfo.store')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-body">
                                             <div class="row">
 
-
-
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="first-name-vertical">Site Name</label>
-                                                        <input type="text" id="first-name-vertical" class="form-control" name="site_name" value="{{ $personaldata->site_name ??'' }}" placeholder="Site Name" >
+                                                        <label for="first-name-vertical">Name</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="name" value="{{ $personaldata->name ??'' }}" placeholder="Name" >
                                                     </div>
                                                 </div>
-                          
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Stack</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="stack" value="{{ $personaldata->stack ??'' }}" placeholder="stack" >
+                                                    </div>
+                                                </div>
+                                         
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="contact-info-vertical">Cover Photo</label>
+                                                        <input type="file" id="contact-info-vertical" class="form-control" name="cover_photo">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="contact-info-vertical">Profile Photo</label>
+                                                        <input type="file" id="contact-info-vertical" class="form-control" name="profile_photo">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Intro</label>
+                                                        <textarea name="intro" class="form-control">{{ $personaldata->intro ??'' }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Sort Description</label>
+                                                        <textarea name="short_description" class="form-control">{{ $personaldata->short_description ??'' }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Head Line</label>
+                                                        <textarea name="heading" class="form-control">{{ $personaldata->heading ??'' }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Address</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="address" value="{{ $personaldata->address ??'' }}" placeholder="address" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Nationality</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="country" value="{{ $personaldata->country ??'' }}" placeholder="country" >
+                                                    </div>
+                                                </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="first-name-vertical">Email</label>
                                                         <input type="text" id="first-name-vertical" class="form-control" name="email" value="{{ $personaldata->email ??'' }}" placeholder="email" >
                                                     </div>
                                                 </div>
-                                                <div class="col-12">
+                                                <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="first-name-vertical">Address</label>
-                                                        <textarea name="address" class="form-control">{{ $personaldata->address ??'' }}</textarea>
+                                                        <label for="first-name-vertical">Phone</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="phone" value="{{ $personaldata->phone ??'' }}" placeholder="phone" >
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="first-name-vertical">Facebook</label>
-                                                        <input type="text" id="first-name-vertical" class="form-control" name="facebook" value="{{ $personaldata->facebook ??'' }}" placeholder="Facebook" >
+                                                        <label for="first-name-vertical">Language</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="language" value="{{ $personaldata->language ??'' }}" placeholder="language" >
                                                     </div>
                                                 </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label for="first-name-vertical">Twitter</label>
-                                                        <input type="text" id="first-name-vertical" class="form-control" name="twitter" value="{{ $personaldata->twitter ??'' }}" placeholder="Twitter" >
-                                                    </div>
-                                                </div>
-
                                                 <div class="col-12">
                                                     <button type="submit" class="btn btn-primary mr-1 mb-1">Save</button>
                                                     <button type="reset" class="btn btn-outline-warning mr-1 mb-1">Reset</button>

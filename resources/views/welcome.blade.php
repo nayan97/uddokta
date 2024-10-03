@@ -18,17 +18,17 @@
             <div class="row">
                 <div class="col-md-5 col-12 order-2 order-md-1">
                     <div class="banner-content-one">
-                        <h2 class="sub-heading ">UI/UX Designer</h2>
+                        <h2 class="sub-heading ">{{ $infos->stack}}</h2>
                         <h1 class="heading text-capitalize" >
                             Hey, I am
                             <img src="{{ asset('frontend/asset/img/hand.png') }}" class="hand-move" alt="">
-                            <span class="text-gradient">James Smith</span>
+                            <span class="text-gradient">{{ $infos->name}}</span>
                         </h1>
 
-                        <p class="text">I'm creative designer based in India, and I'm very passionate and dedicated to my work.</p>
+                        <p class="text">{{ $infos->intro }}</p>
 
                         <div class="banner-btn d-flex">
-                            <div><a href="#" class="btn btn-primary rounded-pill">By me coffe</a></div>
+                            <div><a href="{{ $setting->bymecoffe }}" class="btn btn-primary rounded-pill">By me coffe</a></div>
 
                             <div >
                                 <a href="{{ $setting->youtube }}" class="banner-play-btn top-video-btn" title="Play Video">
@@ -97,7 +97,7 @@
 
                             <div class="experience-year position-absolute rounded-circle p-3">
                                 <div class="mx-auto">
-                                    <h2 class="sub-heading text-center mb-1"><span>25</span>k</h2>
+                                    <h2 class="sub-heading text-center mb-1"><span>{{$setting->customers}}</span>k</h2>
                                     <p class="text text-capitalize text-center">Years of experience</p>
                                 </div>
                             </div>
@@ -117,12 +117,12 @@
                                         <div class="dot"></div>
                                         <div class="dot"></div>
                                     </div>
-                                    <h2 class="sub-heading ms-2">I'm a Developer</h2>
+                                    <h2 class="sub-heading ms-2"><span>I, m</span> {{ $infos->stack}}</h2>
                                 </div>
                             </div>
 
-                            <h1 class="heading">I Develop Ideas That Help People</h1>
-                            <p class="text mt-4">Sed aliquet quis diam sit amet blandit. Suspendisse sagittis magna et efficitur egestas. Integer laoreet ligula eu ultrices gravida.</p>
+                            <h1 class="heading">{{ $infos->heading}}</h1>
+                            <p class="text mt-4">{{ $infos->short_description}}</p>
 
                             <!-- info nav  -->
                             <ul class="nav nav-info nav-pills mb-3 mt-4" id="pills-tab" role="tablist">
@@ -144,27 +144,27 @@
                                     <ul class="row gy-3 gy-xl-4 row-cols-2">
                                         <li class="col">
                                             <h6 class="property">My Name:</h6>
-                                            <h5 class="value">James Smith</h5>
+                                            <h5 class="value">{{ $infos->name}}</h5>
                                         </li>
                                         <li class="col">
                                             <h6 class="property">My Mobile No:</h6>
-                                            <h5 class="value">+880 1711 XXX XXX</h5>
+                                            <h5 class="value">{{ $infos->phone}}</h5>
                                         </li>
                                         <li class="col">
                                             <h6 class="property">My Email:</h6>
-                                            <h5 class="value">info@example.com</h5>
+                                            <h5 class="value">{{ $infos->email}}</h5>
                                         </li>
                                         <li class="col">
                                             <h6 class="property">My Email:</h6>
-                                            <h5 class="value">Dhaka, Bangladesh</h5>
+                                            <h5 class="value">{{ $infos->address}}</h5>
                                         </li>
                                         <li class="col">
                                             <h6 class="property">Language:</h6>
-                                            <h5 class="value"> Bengoli, English</h5>
+                                            <h5 class="value"> {{ $infos->language}}</h5>
                                         </li>
                                         <li class="col">
                                             <h6 class="property">My Nationality:</h6>
-                                            <h5 class="value"> Bangladeshi</h5>
+                                            <h5 class="value"> {{ $infos->country}}</h5>
                                         </li>
                                     </ul>
                                 </div>

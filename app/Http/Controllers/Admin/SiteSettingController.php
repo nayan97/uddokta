@@ -43,6 +43,7 @@ class SiteSettingController extends Controller
             $sitesetting->instragram = $request->instragram;
             $sitesetting->youtube = $request->youtube;
             $sitesetting->whatsapp = $request->whatsapp;
+            $sitesetting->bymecoffe = $request->bymecoffe;
             $sitesetting->years_of_experience = $request->years_of_experience;
             $sitesetting->customers = $request->customers;
             $sitesetting->projects = $request->projects;
@@ -122,6 +123,7 @@ class SiteSettingController extends Controller
             $sitesetting->instragram = $request->instragram;
             $sitesetting->youtube = $request->youtube;
             $sitesetting->whatsapp = $request->whatsapp;
+            $sitesetting->bymecoffe = $request->bymecoffe;
             $sitesetting->years_of_experience = $request->years_of_experience;
             $sitesetting->customers = $request->customers;
             $sitesetting->projects = $request->projects;

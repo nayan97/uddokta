@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('instragram')->nullable();
             $table->string('youtube')->nullable();
             $table->string('whatsapp')->nullable();
+            $table->string('bymecoffe')->nullable();
             $table->string('years_of_experience')->nullable();
             $table->string('customers')->nullable();
             $table->string('projects')->nullable();

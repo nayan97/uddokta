@@ -12,11 +12,12 @@ use App\Models\Project;
 use App\Models\Service;
 use App\Models\Subscribe;
 use App\Models\SiteSetting;
+use App\Models\Testimonial;
 use App\Models\BlogCategory;
+use App\Models\PersonalInfo;
 use Illuminate\Http\Request;
 use App\Models\ProjectCategory;
 use App\Http\Controllers\Controller;
-use App\Models\Testimonial;
 use Brian2694\Toastr\Facades\Toastr;
 
 class HomeController extends Controller
@@ -24,13 +25,14 @@ class HomeController extends Controller
     public function home()
     {
         $setting=SiteSetting::first();
+        $infos=PersonalInfo ::first();
         $services=Service::where('status',1)->get();
         $projects=Project::where('status',1)->get();
         $clients=Client::where('status',1)->get();
         $testimonials=Testimonial::where('status',1)->get();
         $teams=Team::where('status',1)->get();
         $blogs=Blog::where('status',1)->latest()->get()->take(3);
-        return view('welcome',compact('setting','services','projects','clients','testimonials','teams','blogs'));
+        return view('welcome',compact('setting','services','projects','clients','testimonials','teams','blogs','infos'));
 
 
     }

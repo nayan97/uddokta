@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\PersonalInfo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 
 class PersonalInfoController extends Controller
 {
@@ -30,7 +31,51 @@ class PersonalInfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $infos = PersonalInfo::first();
+        if($infos){
+           $infos->name = $request->name;
+           $infos->email = $request->email;
+           $infos->phone = $request->phone;
+           $infos->address = $request->address;
+           $infos->stack = $request->stack;
+           $infos->intro = $request->intro;
+           $infos->heading = $request->heading;
+           $infos->short_description = $request->short_description	;
+           $infos->country = $request->country;
+           $infos->language = $request->language;
+            
+
+            if($infos->update()){
+                Toastr::success('Personal infows has been Updated successfully :-)','Success');
+                return redirect()->back();
+            }
+            else{
+                Toastr::error('Something went wrong :-)','Error');
+                return redirect()->back();
+            }
+        }
+        else{
+           $infos=new PersonalInfo();
+           $infos->name = $request->name;
+           $infos->email = $request->email;
+           $infos->phone = $request->phone;
+           $infos->address = $request->address;
+           $infos->stack = $request->stack;
+           $infos->intro = $request->intro;
+           $infos->heading = $request->heading;
+           $infos->short_description = $request->short_description	;
+           $infos->country = $request->country;
+           $infos->language = $request->language;
+
+            if($infos->save()){
+                Toastr::success('Personal infows has been Updated successfully :-)','Success');
+                return redirect()->back();
+            }
+            else{
+                Toastr::error('Something went wrong :-)','Error');
+                return redirect()->back();
+            }
+        }
     }
 
     /**
