@@ -1,8 +1,8 @@
 @extends('frontend.layouts.master')
 @section('content')
- <!-- main content start -->
- <main class="">
-
+<!-- main content start -->
+<main class="">
+    
     <!-- top-banner start -->
     <section class="page-top">
         <!-- top banner background start -->
@@ -10,13 +10,16 @@
         <div class="banner-blur-two"><img src="{{ asset('frontend/asset/img/banner-blur2.png') }}" alt="banner-blur"></div>
         <div class="banner-bg-line"><img src="{{ asset('frontend/asset/img/banner-bg-line.png') }}" alt="banner-bg-line"></div>
         <!-- <div class="banner-object-one"><img src="asset/img/banner-object1.png" alt="banner-object1"></div>
-        <div class="banner-object-two"><img src="asset/img/banner-object2.png" alt="banner-object2"></div> -->
-        <div class="banner-bg-circle"><img src="{{ asset('frontend/asset/img/banner-bg-circle.png') }}" alt="banner-bg-circle"></div>
-        <div class="container">
-            <h1 class="heading text-center">Contact Us</h1>
-            <div class="text-center mt-4"><span class="btn-nav  rounded-pill text-uppercase ">home<i class="fa-solid fa-angle-right mx-2"></i>contact</span></div>
-        </div>
-
+            <div class="banner-object-two"><img src="asset/img/banner-object2.png" alt="banner-object2"></div> -->
+            <div class="banner-bg-circle"><img src="{{ asset('frontend/asset/img/banner-bg-circle.png') }}" alt="banner-bg-circle"></div>
+            <div class="container">
+                @include('frontend.layouts.notify')
+                
+                <h1 class="heading text-center">Contact Us</h1>
+                <div class="text-center mt-4"><span class="btn-nav  rounded-pill text-uppercase ">home<i class="fa-solid fa-angle-right mx-2"></i>contact</span></div>
+            </div>
+            
+           
     </section>
     <!-- top end -->
 
@@ -113,28 +116,31 @@
 
 
                 </div>
-
+              
                 <!-- form start  -->
                 <div class="col-12 col-md-7">
-                    <form action="">
+                    <form method="POST" action="{{route('message.submit')}}">
+                        @csrf
+
+
 
                         <div class="row row-cols-2 g-3 g-md-4">
                             <div class="col">
-                                <input type="text" class="form-control rounded-pill" id="fname" placeholder="First Name">
+                                <input type="text" class="form-control rounded-pill" name="first_name" id="fname" placeholder="First Name">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control rounded-pill" id="lname" placeholder="last Name">
+                                <input type="text" class="form-control rounded-pill" name="last_name" id="lname" placeholder="last Name">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control rounded-pill" id="mobile" placeholder=" Mobile No.">
+                                <input type="text" class="form-control rounded-pill" name="phone" id="mobile" placeholder=" Mobile No.">
                             </div>
                             <div class="col">
-                                <input type="email" class="form-control rounded-pill" id="email-address" placeholder="Email Address">
+                                <input type="email" class="form-control rounded-pill" name="email" id="email-address" placeholder="Email Address">
                             </div>
                         </div>
 
                         <div class="mb-md-5 mb-4 mt-3 mt-md-4">
-                            <textarea class="form-control rounded-4" id="message" rows="5" placeholder="Your message"></textarea>
+                            <textarea class="form-control rounded-4" id="message" rows="5" name="message" placeholder="Your message"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary rounded-pill" >submit now</button>
