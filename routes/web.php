@@ -38,7 +38,9 @@ Route::get('unauthorized', function () {
 
 Route::group(['middleware'=> ['auth', 'admin'], 'as'=>'admin.','prefix'=>'admin'], function(){
     Route::get('dashboard',[AdminDashboardController::class,'dashboard'])->name('dashboard');
-
+    Route::get('subcriber',[AdminDashboardController::class,'subcriber'])->name('subcriber');
+    Route::delete('subcriber/{id}',[AdminDashboardController::class,'destroy'])->name('subcriber.destroy');
+    
     Route::resource('personalinfo','App\Http\Controllers\Admin\PersonalInfoController');
     Route::resource('skills','App\Http\Controllers\Admin\SkillsController');
     Route::resource('awards','App\Http\Controllers\Admin\AwardsController');

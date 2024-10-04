@@ -89,6 +89,11 @@
                 </a>
 
             </li>
+            <li class=" nav-item"><a href="{{ route('admin.subcriber') }}"><i class="feather icon-home">
+                    </i><span class="menu-title" data-i18n="Dashboard">Our Subscriber</span>
+                </a>
+
+            </li>
             <li class=" nav-item"><a href="{{ route('admin.newsletter.send') }}"><i class="feather icon-home">
             </i><span class="menu-title" data-i18n="Dashboard">Newsletter</span>
         </a>
