@@ -82,13 +82,17 @@
             <li class=" nav-item"><a href="{{ route('admin.faq.index') }}"><i class="feather icon-home">
                     </i><span class="menu-title" data-i18n="Dashboard">Faq</span>
                 </a>
-
             </li>
+
             <li class=" nav-item"><a href="{{ route('admin.user_message.index') }}"><i class="feather icon-home">
                     </i><span class="menu-title" data-i18n="Dashboard">User Message</span>
                 </a>
-
             </li>
+            <li class=" nav-item"><a href="{{ route('admin.skills.index') }}"><i class="feather icon-home">
+                    </i><span class="menu-title" data-i18n="Dashboard">Skills</span>
+                </a>
+            </li>
+
             <li class=" nav-item"><a href="{{ route('admin.subcriber') }}"><i class="feather icon-home">
                     </i><span class="menu-title" data-i18n="Dashboard">Our Subscriber</span>
                 </a>

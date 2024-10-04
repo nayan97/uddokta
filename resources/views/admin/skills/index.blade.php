@@ -29,10 +29,10 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Testimonial List</h4>
+                                <h4 class="card-title">skills List</h4>
                                 <h4 class="card-title">
-                                    <a href="{{route('admin.testimonial.create')}}" class="bg-primary btn rounded white">
-                                        <i class="feather icon-plus"></i>Add Testimonial
+                                    <a href="{{route('admin.skills.create')}}" class="bg-primary btn rounded white">
+                                        <i class="feather icon-plus"></i>Add Skills
                                     </a>
                                 </h4>
                             </div>
@@ -44,7 +44,7 @@
                                                 <tr>
                                                     <th>Sl</th>
                                                     <th>Name</th>
-                                                    <th>Designation</th>
+                                                    <th>Expertise</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -55,7 +55,7 @@
                                                     <td>{{$loop->iteration}}</td>
                                     
                                                     <td>{{$item->name}}</td>
-                                                    <td>{{ $item->designation }}</td>
+                                                    <td>{{ $item->expertise }}</td>
                                                     <td>
                                                         @if($item->status == 1)
                                                             <span class="badge bg-success">Active</span>
@@ -64,10 +64,10 @@
                                                         @endif
                                                     </td>
                                                     <td class="d-flex">
-                                                        <a href="{{route('admin.testimonial.edit',$item->id)}}" class="mr-4">
+                                                        <a href="{{route('admin.skills.edit',$item->id)}}" class="mr-4">
                                                             <i class="feather icon-edit"></i>
                                                         </a>
-                                                        <form action="{{ route('admin.testimonial.destroy', $item->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this category?');">
+                                                        <form action="{{ route('admin.skills.destroy', $item->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this skills?');">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="border-0">  <i class="fa fa-trash text-danger"></i></button>

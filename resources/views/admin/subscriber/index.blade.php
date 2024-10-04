@@ -28,6 +28,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
+                            @include('admin.layouts.notify')
                             <div class="card-header">
                                 <h4 class="card-title">Subscriber List</h4>
                             </div>

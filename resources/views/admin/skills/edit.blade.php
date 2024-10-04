@@ -18,7 +18,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active"><a href="{{route('admin.testimonial.index')}}">Edit Testimonial</a>
+                                <li class="breadcrumb-item active"><a href="{{route('admin.testimonial.index')}}">Edit Skills</a>
                                 </li>
                             </ol>
                         </div>
@@ -32,12 +32,12 @@
                     <div class="col-md-12 col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Edit Testimonial</h4>
+                                <h4 class="card-title">Edit Skills</h4>
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
                                     @include('admin.layouts.notify')
-                                    <form class="form form-vertical" action="{{route('admin.testimonial.update',$data->id)}}" method="POST" enctype="multipart/form-data">
+                                    <form class="form form-vertical" action="{{route('admin.skills.update',$data->id)}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
                                         <div class="form-body">
@@ -50,28 +50,10 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="password-vertical">Designation</label>
-                                                        <input type="text" class="form-control" name="designation" value="{{ $data->designation }}">
+                                                        <label for="password-vertical">Expertise Percent</label>
+                                                        <input type="number" class="form-control" name="expertise" value="{{ $data->expertise }}">
                                                     </div>
                                                 </div>
-
-
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <label for="first-name-vertical">Video Message </label>
-                                                        <textarea type="text"  class="form-control" name="message"  placeholder="Description">{{ $data->message }}</textarea>
-                                                    </div>
-                                                </div>
-                                                {{-- <div class="col-12">
-                                                    <div class="form-group">
-                                                        <label for="contact-info-vertical">Image</label><br>
-                                                        @if($data->image)
-                                                        <img src="{{ asset($data->image) }}" class="mt-3 mb-3" style="width:100px" alt="">
-
-                                                        @endif
-                                                        <input type="file" id="contact-info-vertical" class="form-control" name="image">
-                                                    </div>
-                                                </div> --}}
 
                                                 <div class="col-6">
                                                     <div class="form-group">
@@ -106,21 +88,7 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 <script>
-    $('#summernote').summernote({
-      placeholder: 'Description Text here',
-      tabsize: 2,
-      styleTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-      height: 120,
-      toolbar: [
-        ['style', ['style']],
-        ['font', ['bold', 'underline', 'clear']],
-        ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['table', ['table']],
-        ['insert', ['link', 'picture', 'video']],
-        ['view', ['fullscreen', 'codeview', 'help']]
-      ]
-    });
+
   </script>
 
 

@@ -14,7 +14,8 @@ class SkillsController extends Controller
      */
     public function index()
     {
-        //
+        $datas=MySkill::latest()->get();
+        return view('admin.skills.index',compact('datas'));
     }
 
     /**
@@ -55,7 +56,8 @@ class SkillsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data=MySkill::find($id);
+        return view('admin.skills.edit',compact('data'));
     }
 
     /**
@@ -63,7 +65,15 @@ class SkillsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data=MySkill::find($id);
+
+        $data->name=$request->name;
+        $data->expertise=$request->expertise; 
+        $data->status=$request->status;
+    
+        $data->save();
+        Toastr::success('Data saved succesfully');
+        return redirect()->back();
     }
 
     /**
@@ -71,6 +81,9 @@ class SkillsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data=MySkill::find($id);
+        $data->delete();
+        Toastr::success('Data Deleted succesfully');
+        return redirect()->back();
     }
 }
