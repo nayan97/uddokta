@@ -24,7 +24,8 @@
             </div>
 
             <div class="col">
-                <form class="row g-3">
+                <form method="POST" class="row g-3" action="{{route('subscribe.submit')}}">
+                    @csrf
                     <div class="col-auto">
                       <input type="email" class="form-control rounded-pill p-1 ps-3 p-md-3 ps-md-4" name="email" id="email" placeholder="Email Address" required >
                     </div>

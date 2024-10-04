@@ -14,7 +14,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active"><a href="{{route('admin.testimonial.index')}}">Testimonial</a>
+                                <li class="breadcrumb-item active"><a href="{{route('admin.subcriber')}}">Testimonial</a>
                                 </li>
                             </ol>
                         </div>
@@ -29,7 +29,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Testimonial List</h4>
+                                <h4 class="card-title">Subscriber List</h4>
                             </div>
                             <div class="card-content">
                                 <div class="card-body card-dashboard">
