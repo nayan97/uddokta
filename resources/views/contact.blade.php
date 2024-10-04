@@ -46,15 +46,15 @@
                         <div class="contact-card">
                             <img src="{{ asset('frontend/asset/img/location.png') }}" alt="...">
                             <h2 class="title mt-2 mt-lg-4">Location </h2>
-                            <p class="text mt-2">15th Colony, Kukatpally, Surat</p>
+                            <p class="text mt-2">{{ $setting->address}}</p>
                         </div>
                     </div>
                     <div class="col">
                         <div class="contact-card">
                             <img src="{{ asset('frontend/asset/img/phone.png') }}" alt="...">
                             <h2 class="title mt-2 mt-lg-4">Phone No. </h2>
-                            <p class="text mt-2">+880 873 6987 365</p>
-                            <p class="text mt-2">+880 873 6987 365</p>
+                            <p class="text mt-2">{{ $setting->phone}}</p>
+                           
                         </div>
                     </div>
                     <div class="col">

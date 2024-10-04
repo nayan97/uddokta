@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Project extends Model
 {
     use HasFactory;
+    Protected $guarded =[];
     public function project_category()
     {
         return $this->belongsTo(ProjectCategory::class,'project_category_id','id');

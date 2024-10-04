@@ -379,43 +379,6 @@
                            
                             <!-- carousel-item end  -->
 
-
-                            {{-- <div class="carousel-item  pt-4 pb-5">
-                                <div class="testimonial-card" >
-                                    <div class="d-flex">
-                                        <div class="client-img-wrap rounded-circle p-xl-2 p-1 me-3"><img src="{{ asset('frontend/asset/img/client2-one.jpg') }}" class="rounded-circle" alt=""></div>
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <h2 class="title mb-1">Albert Walkers</h2>
-                                                <small class="text-capitalize text-primary">Our client</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text mt-xl-4 mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus eveniet eligendi officia illo eaque veniam similique laudantium!</p>
-
-                                    <img src="{{ asset('frontend/asset/img/quote.png') }}" class="qoute" alt="">
-                                </div>
-                            </div> --}}
-
-                            {{-- <div class="carousel-item  pt-4 pb-5">
-                                <div class="testimonial-card" >
-                                    <div class="d-flex">
-                                        <div class="client-img-wrap rounded-circle p-xl-2 p-1 me-3"><img src="{{ asset('frontend/asset/img/client3-one.jpg') }}" class="rounded-circle" alt=""></div>
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <h2 class="title mb-1">Albert Walkers</h2>
-                                                <small class="text-capitalize text-primary">Our client</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text mt-xl-4 mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus eveniet eligendi officia illo eaque veniam similique laudantium!</p>
-
-                                    <img src="{{ asset('frontend/asset/img/quote.png') }}" class="qoute" alt="">
-                                </div>
-                            </div> --}}
-
-
-
                         </div>
 
                       </div>

@@ -31,159 +31,49 @@
                             <li class="nav-item" role="presentation">
                               <button class="nav-link px-4 rounded-pill active" id="pill-all-tab" data-bs-toggle="pill" data-bs-target="#pill-all" type="button" role="tab" aria-controls="pill-all" aria-selected="true">All</button>
                             </li>
+                            @foreach ($project_categories as $item )
                             <li class="nav-item" role="presentation">
-                              <button class="nav-link px-4 rounded-pill" id="pill-graphics-tab" data-bs-toggle="pill" data-bs-target="#pill-graphics" type="button" role="tab" aria-controls="pill-graphics" aria-selected="false">Graphics Design</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link px-4 rounded-pill" id="pill-web-tab" data-bs-toggle="pill" data-bs-target="#pill-web" type="button" role="tab" aria-controls="pill-web" aria-selected="false">Web Development</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link px-4 rounded-pill" id="pill-mobile-tab" data-bs-toggle="pill" data-bs-target="#pill-mobile" type="button" role="tab" aria-controls="pill-mobile" aria-selected="false">Mobile App</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link px-4 rounded-pill" id="pill-motion-tab" data-bs-toggle="pill" data-bs-target="#pill-motion" type="button" role="tab" aria-controls="pill-motion" aria-selected="false">Motion Graphics</button>
-                            </li>
+                                <button class="nav-link px-4 rounded-pill" id="pill-{{ $item->id }}" data-bs-toggle="pill" data-bs-target="#pill-{{ $item->slug }}" type="button" role="tab" aria-controls="pill-graphics" aria-selected="false">{{ $item->name }}</button>
+                              </li>
+                            @endforeach
+                       
                         </ul>
                     </div>
 
                       <!-- projects start  -->
                       <div class="tab-content mt-4" id="pills-tabContent">
 
-                        <div class="tab-pane fade show active" id="pill-all" role="tabpanel" aria-labelledby="pill-all-tab" tabindex="0">
-                            <div class="row g-4 row-cols-1 row-cols-md-2">
+                        @foreach ($project_categories as $projectCat )
+                            <div class="tab-pane fade show @if($loop->first) active @endif" id="pill-{{ $projectCat->slug}}" role="tabpanel" aria-labelledby="pill-all-tab" tabindex="0">
+                                <div class="row g-4 row-cols-1 row-cols-md-2">
 
-                                <div class="col">
-                                    <!-- portfolio-card start  -->
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{ asset('frontend/asset/img/portfolio/portfolio1.jpg') }}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >Project Management Dashboard</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
+                                    <div class="col">
+                                        <!-- portfolio-card start  -->
+                                        @foreach ($projects as $project )
+                                         @if ( $project->project_category->slug == $projectCat->slug)
+                                            <div class="card portfolio-card border-0">
+                                                <img src="{{$project->image_one}}" class="card-img rounded-0" alt="...">
+                                                <div class="card-img-overlay rounded-0">
+                                                    <h5 class="sub-heading">{{$project->name}}<span class="ms-4">BRand Identity</span></h5>
+                                                    <h2 class="title mt-4 mb-2 text-capitalize" >Project Management Dashboard</h2>
+                                                    <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
+                                                    <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                                                </div>
+                                            </div>
+                                          @endif
+                                        @endforeach
+                                        
                                     </div>
-                                </div>
 
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{ asset('frontend/asset/img/portfolio/portfolio2.jpg') }}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >Architecharal Studio</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
+                        
 
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{ asset('frontend/asset/img/portfolio/portfolio3.jpg') }}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >File Manager App</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
                                 </div>
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{ asset('frontend/asset/img/portfolio/portfolio4.jpg') }}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >File Manager App</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{ asset('frontend/asset/img/portfolio/portfolio5.jpg') }}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >NFT Header Version</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{asset('frontend/asset/img/portfolio/portfolio4.jpg')}}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >File Manager App</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{asset('frontend/asset/img/portfolio/portfolio5.jpg')}}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >NFT Header Version</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
-                        </div>
 
-                        <div class="tab-pane fade" id="pill-graphics" role="tabpanel" aria-labelledby="pill-graphics-tab" tabindex="0">
-                            <div class="row g-4 row-cols-1 row-cols-md-2">
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{asset('frontend/asset/img/portfolio/portfolio5.jpg')}}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >NFT Header Version</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{asset('frontend/asset/img/portfolio/portfolio4.jpg')}}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >File Manager App</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{asset('frontend/asset/img/portfolio/portfolio5.jpg')}}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >NFT Header Version</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="tab-pane fade" id="pill-web" role="tabpanel" aria-labelledby="pill-web-tab" tabindex="0">
+                        @endforeach
+                     
+       
+                        {{-- <div class="tab-pane fade  show active" id="pill-motion" role="tabpanel" aria-labelledby="pill-motion-tab" tabindex="0">
                             <div class="row g-4 row-cols-1 row-cols-md-2">
 
                                 <div class="col">
@@ -211,67 +101,7 @@
                                 </div>
 
                             </div>
-                        </div>
-
-
-                        <div class="tab-pane fade" id="pill-mobile" role="tabpanel" aria-labelledby="pill-mobile-tab" tabindex="0">
-                            <div class="row g-4 row-cols-1 row-cols-md-2">
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{asset('frontend/asset/img/portfolio/portfolio4.jpg')}}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >File Manager App</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{asset('frontend/asset/img/portfolio/portfolio5.jpg')}}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >NFT Header Version</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="pill-motion" role="tabpanel" aria-labelledby="pill-motion-tab" tabindex="0">
-                            <div class="row g-4 row-cols-1 row-cols-md-2">
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{asset('frontend/asset/img/portfolio/portfolio4.jpg')}}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >File Manager App</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card portfolio-card border-0">
-                                        <img src="{{asset('frontend/asset/img/portfolio/portfolio5.jpg')}}" class="card-img rounded-0" alt="...">
-                                        <div class="card-img-overlay rounded-0">
-                                            <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
-                                            <h2 class="title mt-4 mb-2 text-capitalize" >NFT Header Version</h2>
-                                            <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                            <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                        </div> --}}
 
                       </div>
                 </div>
