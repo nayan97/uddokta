@@ -172,30 +172,13 @@
                                 <!-- my awards start  -->
                                 <div class="tab-pane fade" id="pills-awards" role="tabpanel" aria-labelledby="pills-awards-tab" tabindex="0">
                                     <ul class="row gy-4 row-cols-2">
-                                        <li class="col">
-                                            <h6 class="property">2022</h6>
-                                            <h5 class="value">Carmignac Photojournalism.</h5>
-                                        </li>
-                                        <li class="col">
-                                            <h6 class="property">2021</h6>
-                                            <h5 class="value">International Photography Gran</h5>
-                                        </li>
-                                        <li class="col">
-                                            <h6 class="property">2020</h6>
-                                            <h5 class="value">HIPA International Photography.</h5>
-                                        </li>
-                                        <li class="col">
-                                            <h6 class="property">2022</h6>
-                                            <h5 class="value">Carmignac Photojournalism.</h5>
-                                        </li>
-                                        <li class="col">
-                                            <h6 class="property">2021</h6>
-                                            <h5 class="value">International Photography Gran</h5>
-                                        </li>
-                                        <li class="col">
-                                            <h6 class="property">2020</h6>
-                                            <h5 class="value">HIPA International Photography.</h5>
-                                        </li>
+                                        @foreach ($awards as $award )
+                                            <li class="col">
+                                                <h6 class="property">{{ $award->year}}</h6>
+                                                <h5 class="value">{{ $award->name}}</h5>
+                                            </li>
+                                        @endforeach
+                         
                                     </ul>
                                 </div>
 
@@ -337,7 +320,7 @@
                     <!-- portfolio-card start  -->
                     @foreach ($projects as $project )
                         <div class="card portfolio-card border-0">
-                            <img style="height:460px; width:420px" src="{{ $project->image_one }}" class="card-img rounded-0" alt="...">
+                            <img style="height:460px; width:420px" src="{{ $project->image_one }}" class="card-img rounded-0 text-center" alt="...">
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
                                 <h2 class="title mt-4 mb-2 text-capitalize" >{{ $project->name}}</h2>

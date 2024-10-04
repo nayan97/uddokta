@@ -11,6 +11,7 @@ use App\Models\Message;
 use App\Models\MySkill;
 use App\Models\Project;
 use App\Models\Service;
+use App\Models\MyAwards;
 use App\Models\Subscribe;
 use App\Models\SiteSetting;
 use App\Models\Testimonial;
@@ -32,9 +33,10 @@ class HomeController extends Controller
         $clients=Client::where('status',1)->get();
         $testimonials=Testimonial::where('status',1)->get();
         $skills=MySkill::where('status',1)->latest()->take(3)->get();
+        $awards=MyAwards::where('status',1)->latest()->take(6)->get();
         $teams=Team::where('status',1)->get();
         $blogs=Blog::where('status',1)->latest()->get()->take(3);
-        return view('welcome',compact('setting','services','projects','clients','testimonials','teams','blogs','infos','skills'));
+        return view('welcome',compact('setting','services','projects','clients','testimonials','teams','blogs','infos','skills','awards'));
 
 
     }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\MyAwards;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 
 class AwardsController extends Controller
 {
@@ -20,7 +22,7 @@ class AwardsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.award.create');
     }
 
     /**
@@ -28,7 +30,15 @@ class AwardsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new MyAwards();
+        $data->name=$request->name;
+        $data->year=$request->year; 
+        $data->status=$request->status;
+    
+
+        $data->save();
+        Toastr::success('Data saved succesfully');
+        return redirect()->back();
     }
 
     /**
