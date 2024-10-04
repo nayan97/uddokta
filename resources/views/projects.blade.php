@@ -57,7 +57,7 @@
                                                     <h5 class="sub-heading">{{$project->name}}<span class="ms-4">BRand Identity</span></h5>
                                                     <h2 class="title mt-4 mb-2 text-capitalize" >Project Management Dashboard</h2>
                                                     <p class="text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil architecto dicta modi itaque sequi aut!</p>
-                                                    <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                                                    <a href="{{route('project.details', $project->slug)}}" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
                                                 </div>
                                             </div>
                                           @endif
