@@ -50,6 +50,7 @@ class SiteSettingController extends Controller
             $sitesetting->all_client = $request->all_client;
             $sitesetting->coffe = $request->coffe;
             $sitesetting->awards = $request->awards;
+            $sitesetting->office_time = $request->office_time;
             $sitesetting->map = $request->map;
             $sitesetting->meta_title = $request->meta_title;
             $sitesetting->meta_description = $request->meta_description;
@@ -132,6 +133,7 @@ class SiteSettingController extends Controller
             $sitesetting->all_client = $request->all_client;
             $sitesetting->coffe = $request->coffe;
             $sitesetting->awards = $request->awards;
+            $sitesetting->office_time = $request->office_time;
             $sitesetting->map = $request->map;
             $sitesetting->meta_title = $request->meta_title;
             $sitesetting->meta_description = $request->meta_description;

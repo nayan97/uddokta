@@ -14,7 +14,7 @@
             <div class="banner-bg-circle"><img src="{{ asset('frontend/asset/img/banner-bg-circle.png') }}" alt="banner-bg-circle"></div>
             <div class="container">
                 @include('frontend.layouts.notify')
-                
+
                 <h1 class="heading text-center">Contact Us</h1>
                 <div class="text-center mt-4"><span class="btn-nav  rounded-pill text-uppercase ">home<i class="fa-solid fa-angle-right mx-2"></i>contact</span></div>
             </div>
@@ -72,8 +72,8 @@
                         <div class="contact-card">
                             <img src="{{ asset('frontend/asset/img/clock.png') }}" alt="...">
                             <h2 class="title mt-2 mt-lg-4">Working Hours </h2>
-                            <p class="text mt-2">Monday To Saturday</p>
-                            <p class="text mt-2">8:00am To 10:00pm</p>
+                            <p class="text mt-2">{{$setting->office_time}}</p>
+                            
                         </div>
                     </div>
                 </div>

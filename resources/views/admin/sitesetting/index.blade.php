@@ -171,6 +171,12 @@
                                                         <label for="first-name-vertical">Awards</label>
                                                         <input type="text" id="first-name-vertical" class="form-control" name="awards" value="{{ $data->awards ??'' }}" placeholder="Awards" >
                                                     </div>
+                                                </div>      
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Working Hours</label>
+                                                        <input type="text" id="first-name-vertical" class="form-control" name="office_time" value="{{ $data->office_time ??'' }}" placeholder="Working Hours" >
+                                                    </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">

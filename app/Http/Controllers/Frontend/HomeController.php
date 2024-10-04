@@ -13,6 +13,7 @@ use App\Models\Project;
 use App\Models\Service;
 use App\Models\MyAwards;
 use App\Models\Subscribe;
+use App\Models\Appoinment;
 use App\Models\SiteSetting;
 use App\Models\Testimonial;
 use App\Models\BlogCategory;
@@ -176,4 +177,38 @@ class HomeController extends Controller
         return view('testimonial',compact('setting'));
 
     }
+
+    public function appointmentSubmit(Request $request)
+    {
+
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required|min:10',
+            'address' => 'required',
+            'budget' => 'required',
+            'marketing_status' => 'required',
+            'facebook' => 'required',
+            'message_one' => 'required',
+            'message_two' => 'required',
+
+        ]);
+
+        $data=new Appoinment();
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->phone=$request->phone;
+        $data->address=$request->address;
+        $data->marketing_status=$request->marketing_status;
+        $data->budget=$request->budget;
+        $data->facebook=$request->facebook;
+        $data->website=$request->website;
+        $data->message_one=$request->message_one;
+        $data->message_two=$request->message_two;
+        $data->save();
+        Toastr::success('Your Response has been saved!');
+        return redirect()->back();
+    }
+
+    
 }

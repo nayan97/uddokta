@@ -101,6 +101,7 @@ Route::get('/blog-detail/{slug}','App\Http\Controllers\Frontend\HomeController@b
 Route::get('/blog-category/{slug}','App\Http\Controllers\Frontend\HomeController@blogByCategory')->name('blog.by.category');
 Route::post('/message/submit','App\Http\Controllers\Frontend\HomeController@messageSubmit')->name('message.submit');
 Route::post('/subcribe/submit','App\Http\Controllers\Frontend\HomeController@subscribeSubmit')->name('subscribe.submit');
+Route::post('/appointment/submit','App\Http\Controllers\Frontend\HomeController@appointmentSubmit')->name('appointment.submit');
 
 
 

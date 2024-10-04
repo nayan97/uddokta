@@ -32,6 +32,7 @@ return new class extends Migration
             $table->string('all_client')->nullable();
             $table->string('coffe')->nullable();
             $table->string('awards')->nullable();
+            $table->string('office_time')->nullable();
             $table->text('map')->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
