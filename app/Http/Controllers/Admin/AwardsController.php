@@ -14,7 +14,8 @@ class AwardsController extends Controller
      */
     public function index()
     {
-        //
+        $datas=MyAwards::latest()->get();
+        return view('admin.award.index',compact('datas'));
     }
 
     /**
@@ -54,7 +55,8 @@ class AwardsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data=MyAwards::find($id);
+        return view('admin.award.edit',compact('data'));
     }
 
     /**
@@ -62,7 +64,15 @@ class AwardsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data=MyAwards::find($id);
+
+        $data->name=$request->name;
+        $data->year=$request->year; 
+        $data->status=$request->status;
+
+        $data->save();
+        Toastr::success('Data saved succesfully');
+        return redirect()->back();
     }
 
     /**
@@ -70,6 +80,9 @@ class AwardsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data=MyAwards::find($id);
+        $data->delete();
+        Toastr::success('Data Deleted succesfully');
+        return redirect()->back();
     }
 }
