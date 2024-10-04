@@ -40,6 +40,8 @@ Route::group(['middleware'=> ['auth', 'admin'], 'as'=>'admin.','prefix'=>'admin'
     Route::get('dashboard',[AdminDashboardController::class,'dashboard'])->name('dashboard');
     Route::get('subcriber',[AdminDashboardController::class,'subcriber'])->name('subcriber');
     Route::delete('subcriber/{id}',[AdminDashboardController::class,'destroy'])->name('subcriber.destroy');
+    Route::get('appointment',[AdminDashboardController::class,'appointment'])->name('appointment');
+    Route::delete('appointment/{id}',[AdminDashboardController::class,'appointmentDestroy'])->name('appointment.destroy');
     
     Route::resource('personalinfo','App\Http\Controllers\Admin\PersonalInfoController');
     Route::resource('skills','App\Http\Controllers\Admin\SkillsController');
