@@ -34,6 +34,36 @@ class PersonalInfoController extends Controller
         $infos = PersonalInfo::first();
         if($infos){
            $infos->name = $request->name;
+           $cimage = $request->file('cover_photo');
+           if($cimage)
+           {
+               $image_name= uniqid();
+               $ext = strtolower($cimage->getClientOriginalExtension());
+               $image_full_name = $image_name. '.' .$ext;
+               $upload_path = 'images/personalinfo/';
+               $image_url = $upload_path.$image_full_name;
+               $success = $cimage->move($upload_path, $image_full_name);
+               if($success)
+               {
+                   $infos->cover_photo = $image_url;
+               }
+
+           }
+           $pimage = $request->file('profile_photo');
+           if($pimage)
+           {
+               $image_name= uniqid();
+               $ext = strtolower($pimage->getClientOriginalExtension());
+               $image_full_name = $image_name. '.' .$ext;
+               $upload_path = 'images/personalinfo/';
+               $image_url = $upload_path.$image_full_name;
+               $success = $pimage->move($upload_path, $image_full_name);
+               if($success)
+               {
+                $infos->profile_photo = $image_url;
+               }
+
+           }
            $infos->email = $request->email;
            $infos->phone = $request->phone;
            $infos->address = $request->address;
@@ -57,6 +87,35 @@ class PersonalInfoController extends Controller
         else{
            $infos=new PersonalInfo();
            $infos->name = $request->name;
+           if($cimage)
+           {
+               $image_name= uniqid();
+               $ext = strtolower($cimage->getClientOriginalExtension());
+               $image_full_name = $image_name. '.' .$ext;
+               $upload_path = 'images/personalinfo/';
+               $image_url = $upload_path.$image_full_name;
+               $success = $cimage->move($upload_path, $image_full_name);
+               if($success)
+               {
+                   $infos->icon_light = $image_url;
+               }
+
+           }
+           $pimage = $request->file('profile_photo');
+           if($pimage)
+           {
+               $image_name= uniqid();
+               $ext = strtolower($pimage->getClientOriginalExtension());
+               $image_full_name = $image_name. '.' .$ext;
+               $upload_path = 'images/personalinfo/';
+               $image_url = $upload_path.$image_full_name;
+               $success = $pimage->move($upload_path, $image_full_name);
+               if($success)
+               {
+                $infos->profile_photo = $image_url;
+               }
+
+           }
            $infos->email = $request->email;
            $infos->phone = $request->phone;
            $infos->address = $request->address;

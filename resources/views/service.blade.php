@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="p-3">
-                            <a href="#"><h5 class="title">{{$service->name}}</h5></a>
+                            <a href="{{route('service.details', $service->slug)}}"><h5 class="title">{{$service->name}}</h5></a>
                             <p class="text">{!! $service->description !!}</p>
                         </div>
                         <span class="card-number">{{ $loop ->index + 1}}</span>
@@ -389,7 +389,7 @@
                     <div class="testimonial-video">
                         <img src="{{ asset('frontend/asset/img/testimonial-one.jpg') }}" alt="">
                         <div class="btn-wrap">
-                            <a href="#" class="testimonial-play-btn popup-youtube " title="Play Video">
+                            <a href="{{ $setting->youtube }}" class="testimonial-play-btn popup-youtube " title="Play Video">
                                 <span><i class="fa-solid fa-play"></i></span>
                             </a>
                         </div>
