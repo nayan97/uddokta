@@ -44,6 +44,7 @@
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="first-name-vertical">Name</label>
+                                            
                                                         <input type="text" id="first-name-vertical" class="form-control" name="name" value="{{ $personaldata->name ??'' }}" placeholder="Name" >
                                                     </div>
                                                 </div>
@@ -57,12 +58,18 @@
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="contact-info-vertical">Cover Photo</label>
+                                                        @if(!empty($personaldata->cover_photo))
+                                                        <img src="{{ asset($personaldata->cover_photo) }}" style="width:80px;height:80px;margin-top:5px;margin-bottom:5px" alt="">
+                                                        @endif
                                                         <input type="file" id="contact-info-vertical" class="form-control" name="cover_photo">
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="contact-info-vertical">Profile Photo</label>
+                                                        @if(!empty($personaldata->profile_photo))
+                                                        <img src="{{ asset($personaldata->profile_photo) }}" style="width:80px;height:80px;margin-top:5px;margin-bottom:5px" alt="">
+                                                        @endif
                                                         <input type="file" id="contact-info-vertical" class="form-control" name="profile_photo">
                                                     </div>
                                                 </div>

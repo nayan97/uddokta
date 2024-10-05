@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('work_steps', function (Blueprint $table) {
             $table->id();
-            $table->text('logo')->nullable();
-            $table->string('title')->nullable();
-            $table->text('short_description')->nullable();
-            $table->boolean('status')->default(1);
+            $table->text('logo_one')->nullable();
+            $table->text('logo_two')->nullable();
+            $table->text('logo_three')->nullable();
+            $table->text('description_one')->nullable();
+            $table->text('description_two')->nullable();
+            $table->text('description_three')->nullable();
             $table->timestamps();
         });
     }
