@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
         $setting=SiteSetting::first();
         $infos=PersonalInfo ::first();
-        $steps = WorkStep::where('status', 1)->orderBy('id', 'asc')->take(3)->get();
+        $steps = WorkStep::first();
         $services=Service::where('status',1)->get();
         $projects=Project::where('status',1)->get();
         $clients=Client::where('status',1)->get();
@@ -59,7 +59,7 @@ class HomeController extends Controller
         $setting=SiteSetting::first();
         $services=Service::where('status',1)->get();
         $testimonials=Testimonial::where('status',1)->latest()->get();
-        $steps = WorkStep::where('status', 1)->orderBy('id', 'asc')->take(3)->get();
+        $steps = WorkStep::first();
         return view('service',compact('setting','services','testimonials','steps'));
 
     }

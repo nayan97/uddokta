@@ -393,7 +393,7 @@
                         </div>
                     </div>
 
-                    <h1 class="heading mt-2">I Work With Over 150+ Happy Client</h1>
+                    <h1 class="heading mt-2">I Work With Over {{$setting->happy_client}}+ Happy Client</h1>
 
                     <p class="text mt-4">
                         Maecenas blandit dapibus egestas. Donec vestibulum nec nunc sit amet interdum. Curabitur accumsan, ante a tincidunt placerat, magna nisi egestas lorem, non efficitur odio diam interdum ipsum.
@@ -431,24 +431,45 @@
 
                 <!-- working step cards start  -->
                 <div class="working-card-wrap mt-5 d-md-flex justify-content-between">
-                    @foreach ( $steps as $step )
+
                     <div class="working-card card border-0">
                         <div class="card-img-wrap">
-                            <img src="{{ $step -> logo }}" class="" alt="...">
+                            <img src="{{  $steps->logo_one }}" class="" alt="...">
                         </div>
 
                         <div class="card-body p-0">
-                            <h5 class="title">{{ $step -> title }}</h5>
-                            <p class="card-text">{!! $step->short_description !!}</p>
+                            <h5 class="title">Concept Creation</h5>
+                            <p class="card-text">{!! $steps->description_one!!}</p>
                         </div>
 
-                        <span class="card-number">{{ $loop ->index + 1}}</span>
+                        <span class="card-number">01</span>
                     </div>
- 
-                    @endforeach
 
-               
-             
+                    <div class="working-card card border-0">
+                        <div class="card-img-wrap">
+                            <img src="{{  $steps->logo_two }}" class="" alt="...">
+                        </div>
+
+                        <div class="card-body p-0">
+                            <h5 class="title">Sketch Drawing</h5>
+                            <p class="card-text">{!! $steps->description_two!!}</p>
+                        </div>
+
+                        <span class="card-number">02</span>
+                    </div>
+
+                    <div class="working-card card border-0">
+                        <div class="card-img-wrap">
+                            <img src="{{  $steps->logo_three }}" class="" alt="...">
+                        </div>
+
+                        <div class="card-body p-0">
+                            <h5 class="title">Final Design</h5>
+                            <p class="card-text">{!! $steps->description_two!!}</p>
+                        </div>
+
+                        <span class="card-number">03</span>
+                    </div>
 
                 </div>
 
