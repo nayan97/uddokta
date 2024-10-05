@@ -164,44 +164,21 @@
                 <!-- working step cards start  -->
                 <div class="working-card-wrap mt-5 d-md-flex justify-content-between">
 
+                    @foreach ( $steps as $step )
                     <div class="working-card card border-0">
                         <div class="card-img-wrap">
-                            <img src="{{ asset('frontend/asset/img/working-step1.png') }}" class="" alt="...">
+                            <img src="{{ $step -> logo }}" class="" alt="...">
                         </div>
 
                         <div class="card-body p-0">
-                            <h5 class="title">Concept Creation</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro minus dolorem dolores ut et iusto.</p>
+                            <h5 class="title">{{ $step -> title }}</h5>
+                            <p class="card-text">{!! $step->short_description !!}</p>
                         </div>
 
-                        <span class="card-number">01</span>
+                        <span class="card-number">{{ $loop ->index + 1}}</span>
                     </div>
-
-                    <div class="working-card card border-0">
-                        <div class="card-img-wrap">
-                            <img src="{{ asset('frontend/asset/img/working-step2.png') }}" class="" alt="...">
-                        </div>
-
-                        <div class="card-body p-0">
-                            <h5 class="title">Sketch Drawing</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro minus dolorem dolores ut et iusto.</p>
-                        </div>
-
-                        <span class="card-number">02</span>
-                    </div>
-
-                    <div class="working-card card border-0">
-                        <div class="card-img-wrap">
-                            <img src="{{ asset('frontend/asset/img/working-step3.png') }}" class="" alt="...">
-                        </div>
-
-                        <div class="card-body p-0">
-                            <h5 class="title">Final Design</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla porro minus dolorem dolores ut et iusto.</p>
-                        </div>
-
-                        <span class="card-number">03</span>
-                    </div>
+ 
+                    @endforeach
 
                 </div>
 

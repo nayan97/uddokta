@@ -18,7 +18,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active"><a href="{{route('admin.skills.index')}}">Skills</a>
+                                <li class="breadcrumb-item active"><a href="{{route('admin.workstep.index')}}">Work step</a>
                                 </li>
                             </ol>
                         </div>
@@ -32,24 +32,31 @@
                     <div class="col-md-12 col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Add Skills</h4>
+                                <h4 class="card-title">Add Work step</h4>
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
                                     @include('admin.layouts.notify')
-                                    <form class="form form-vertical" action="{{route('admin.skills.store')}}" method="POST">
+                                    <form class="form form-vertical" action="{{route('admin.workstep.store')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-body">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="password-vertical">Name</label>
-                                                        <input type="text" class="form-control" name="name">
+                                                        <label for="contact-info-vertical">Cover Photo</label>
+                                                        <input type="file" id="contact-info-vertical" class="form-control" name="logo">
                                                     </div>
-                                                </div> <div class="col-6">
+                                                </div>
+                                                <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="password-vertical">Expertise</label>
-                                                        <input type="number" class="form-control" name="expertise">
+                                                        <label for="password-vertical">Step Title</label>
+                                                        <input type="text" class="form-control" name="title">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Short Description</label>
+                                                        <textarea name="short_description" class="form-control"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">

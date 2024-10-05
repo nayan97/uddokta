@@ -14,7 +14,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active"><a href="{{route('admin.testimonial.index')}}">Testimonial</a>
+                                <li class="breadcrumb-item active"><a href="{{route('admin.workstep.index')}}">Work step</a>
                                 </li>
                             </ol>
                         </div>
@@ -29,10 +29,10 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">skills List</h4>
+                                <h4 class="card-title">Work step</h4>
                                 <h4 class="card-title">
-                                    <a href="{{route('admin.skills.create')}}" class="bg-primary btn rounded white">
-                                        <i class="feather icon-plus"></i>Add Skills
+                                    <a href="{{route('admin.workstep.create')}}" class="bg-primary btn rounded white">
+                                        <i class="feather icon-plus"></i>Add Work step
                                     </a>
                                 </h4>
                             </div>
@@ -54,8 +54,8 @@
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
                                     
-                                                    <td>{{$item->name}}</td>
-                                                    <td>{{ $item->expertise }}</td>
+                                                    <td>{{$item->title}}</td>
+                                                    <td>{{ $item->logo}}</td>
                                                     <td>
                                                         @if($item->status == 1)
                                                             <span class="badge bg-success">Active</span>

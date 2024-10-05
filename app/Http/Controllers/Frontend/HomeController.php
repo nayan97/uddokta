@@ -12,6 +12,7 @@ use App\Models\MySkill;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\MyAwards;
+use App\Models\WorkStep;
 use App\Models\Subscribe;
 use App\Models\Appoinment;
 use App\Models\SiteSetting;
@@ -29,6 +30,7 @@ class HomeController extends Controller
     {
         $setting=SiteSetting::first();
         $infos=PersonalInfo ::first();
+        $steps = WorkStep::where('status', 1)->orderBy('id', 'asc')->take(3)->get();
         $services=Service::where('status',1)->get();
         $projects=Project::where('status',1)->get();
         $clients=Client::where('status',1)->get();
@@ -37,7 +39,7 @@ class HomeController extends Controller
         $awards=MyAwards::where('status',1)->latest()->take(6)->get();
         $teams=Team::where('status',1)->get();
         $blogs=Blog::where('status',1)->latest()->get()->take(3);
-        return view('welcome',compact('setting','services','projects','clients','testimonials','teams','blogs','infos','skills','awards'));
+        return view('welcome',compact('setting','services','projects','clients','testimonials','teams','blogs','infos','skills','awards', 'steps'));
 
 
     }
@@ -57,7 +59,8 @@ class HomeController extends Controller
         $setting=SiteSetting::first();
         $services=Service::where('status',1)->get();
         $testimonials=Testimonial::where('status',1)->latest()->get();
-        return view('service',compact('setting','services','testimonials'));
+        $steps = WorkStep::where('status', 1)->orderBy('id', 'asc')->take(3)->get();
+        return view('service',compact('setting','services','testimonials','steps'));
 
     }
     public function serviceDetails($slug)
