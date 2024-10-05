@@ -92,10 +92,16 @@
                     </i><span class="menu-title" data-i18n="Dashboard">Skills</span>
                 </a>
             </li>
+
             <li class=" nav-item"><a href="{{ route('admin.awards.index') }}"><i class="feather icon-home">
             </i><span class="menu-title" data-i18n="">Award</span>
-        </a>
-    </li>
+                </a>
+            </li>
+
+            <li class=" nav-item"><a href="{{ route('admin.workstep.index') }}"><i class="feather icon-home">
+            </i><span class="menu-title" data-i18n="">My work step</span>
+                </a>
+            </li>
 
             <li class=" nav-item"><a href="{{ route('admin.subcriber') }}"><i class="feather icon-home">
                     </i><span class="menu-title" data-i18n="Dashboard">Our Subscriber</span>

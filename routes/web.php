@@ -46,6 +46,7 @@ Route::group(['middleware'=> ['auth', 'admin'], 'as'=>'admin.','prefix'=>'admin'
     Route::resource('personalinfo','App\Http\Controllers\Admin\PersonalInfoController');
     Route::resource('skills','App\Http\Controllers\Admin\SkillsController');
     Route::resource('awards','App\Http\Controllers\Admin\AwardsController');
+    Route::resource('workstep','App\Http\Controllers\Admin\WorkStepController');
     Route::resource('sitesetting','App\Http\Controllers\Admin\SiteSettingController');
     Route::resource('blog_category','App\Http\Controllers\Admin\BlogCategoryController');
     Route::resource('blog','App\Http\Controllers\Admin\BlogController');
