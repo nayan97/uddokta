@@ -43,6 +43,7 @@ Route::group(['middleware'=> ['auth', 'admin'], 'as'=>'admin.','prefix'=>'admin'
     Route::get('appointment',[AdminDashboardController::class,'appointment'])->name('appointment');
     Route::delete('appointment/{id}',[AdminDashboardController::class,'appointmentDestroy'])->name('appointment.destroy');
     
+    Route::resource('priceplan','App\Http\Controllers\Admin\PricePlanController');
     Route::resource('personalinfo','App\Http\Controllers\Admin\PersonalInfoController');
     Route::resource('skills','App\Http\Controllers\Admin\SkillsController');
     Route::resource('awards','App\Http\Controllers\Admin\AwardsController');

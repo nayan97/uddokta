@@ -110,8 +110,7 @@
 
                     <h1 class="heading">Get The Quort With Us</h1>
                     <p class="text mb-5">
-                        Proin et nisi elementum, commodo eros vel, varius urna. Donec placerat velit sem, at dignissim risus tempor id. Fusce dignissim tincidunt dapibus. Duis quis ligula ut purus ultrices vehicula eget eget dolor.
-                        <br><br> Fusce sit amet egestas est. Quisque eu cursus leo. Donec convallis tincidunt tempor. Vivamus ultrices varius lectus, vel interdum velit imperdiet non.
+                        {!! $infos->support_req !!}
                     </p>
 
 

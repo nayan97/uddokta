@@ -25,106 +25,19 @@
             <div class="container">
                 <div class="row row-cols-1 g-3 g-lg-4  row-cols-md-2 row-cols-lg-3">
 
+                    @foreach ($testimonials as $item )
                     <div class="col">
                         <div class="testimonial-card">
-                            <img src="{{ asset('frontend/asset/img/video-thum1.jpg') }}" class="video-thum" alt="...">
+                            <img style="width: 416px; height:234px" src="{{ $item->video_thum }}" class="video-thum" alt="...">
 
                             <!-- btn play -->
                             <div class="btn-wrap">
-                                <a href="#" class="open-popup play-btn " title="Play Video"><i
-                                        class="fa-brands fa-youtube"></i></a>
+                                <a href="{{ $item->video_link}}" class="open-popup play-btn " title="Play Video"><i class="fa-brands fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
+                @endforeach
 
-                    <div class="col">
-                        <div class="testimonial-card">
-                            <img src="{{ asset('frontend/asset/img/video-thum2.jpg') }}" class="video-thum" alt="...">
-
-                            <!-- btn play -->
-                            <div class="btn-wrap">
-                                <a href="#" class="open-popup play-btn " title="Play Video"><i
-                                        class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="testimonial-card">
-                            <img src="{{ asset('frontend/asset/img/video-thum3.jpg') }}" class="video-thum" alt="...">
-
-                            <!-- btn play -->
-                            <div class="btn-wrap">
-                                <a href="#" class="open-popup play-btn " title="Play Video"><i
-                                        class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="testimonial-card">
-                            <img src="{{ asset('frontend/asset/img/video-thum4.jpg') }}" class="video-thum" alt="...">
-
-                            <!-- btn play -->
-                            <div class="btn-wrap">
-                                <a href="#" class="open-popup play-btn " title="Play Video"><i
-                                        class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="testimonial-card">
-                            <img src="{{ asset('frontend/asset/img/video-thum5.jpg') }}" class="video-thum" alt="...">
-
-                            <!-- btn play -->
-                            <div class="btn-wrap">
-                                <a href="#" class="open-popup play-btn " title="Play Video"><i
-                                        class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="testimonial-card">
-                            <img src="{{ asset('frontend/asset/img/video-thum6.jpg') }}" class="video-thum" alt="...">
-
-                            <!-- btn play -->
-                            <div class="btn-wrap">
-                                <a href="#" class="open-popup play-btn " title="Play Video"><i
-                                        class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="testimonial-card">
-                            <img src="{{ asset('frontend/asset/img/video-thum7.jpg') }}" class="video-thum" alt="...">
-
-                            <!-- btn play -->
-                            <div class="btn-wrap">
-                                <a href="#" class="open-popup play-btn " title="Play Video"><i
-                                        class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="testimonial-card">
-                            <img src="{{ asset('frontend/asset/img/video-thum8.jpg') }}" class="video-thum" alt="...">
-
-                            <!-- btn play -->
-                            <div class="btn-wrap">
-                                <a href="#" class="open-popup play-btn " title="Play Video"><i
-                                        class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="testimonial-card">
-                            <img src="{{ asset('frontend/asset/img/video-thum9.jpg') }}" class="video-thum" alt="...">
-
-                            <!-- btn play -->
-                            <div class="btn-wrap">
-                                <a href="#" class="open-popup play-btn " title="Play Video"><i
-                                        class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>

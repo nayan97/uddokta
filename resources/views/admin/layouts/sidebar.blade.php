@@ -102,6 +102,11 @@
             </i><span class="menu-title" data-i18n="">My work step</span>
                 </a>
             </li>
+            <li class=" nav-item"><a href="{{ route('admin.priceplan.index') }}"><i class="feather icon-home">
+            </i><span class="menu-title" data-i18n="">Price Plan</span>
+                </a>
+            </li>
+
 
             <li class=" nav-item"><a href="{{ route('admin.subcriber') }}"><i class="feather icon-home">
                     </i><span class="menu-title" data-i18n="Dashboard">Our Subscriber</span>

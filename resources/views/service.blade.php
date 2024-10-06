@@ -250,7 +250,7 @@
                                 <h3 class="sub-title">{{ $plan->sub_title }}</h3>
                                 <h1 class="sub-heading my-4">${{$plan->price}}<span>/Month</span></h1>
 
-                                <button class="btn btn-primary rounded-pill">Get Started</button>
+                                <a class="btn btn-primary rounded-pill" href="{{ route('contact') }}">Get Started</a>
 
                                 <h6 class="mt-4">	{{$plan->pack_title}}:</h6>
                                 <ul class="">
@@ -381,7 +381,7 @@
                     <div class="testimonial-video">
                         <img src="{{ asset('frontend/asset/img/testimonial-one.jpg') }}" alt="">
                         <div class="btn-wrap">
-                            <a href="{{ $setting->youtube }}" class="testimonial-play-btn popup-youtube " title="Play Video">
+                            <a href="{{ route('testimonial') }}" class="testimonial-play-btn popup-youtube " title="Play Video">
                                 <span><i class="fa-solid fa-play"></i></span>
                             </a>
                         </div>

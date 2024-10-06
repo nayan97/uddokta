@@ -96,7 +96,8 @@ class HomeController extends Controller
     public function contact()
     {
         $setting=SiteSetting::first();
-        return view('contact',compact('setting'));
+        $infos=PersonalInfo ::first();
+        return view('contact',compact('setting','infos'));
         // return view('contact');
     }
     public function faq()
@@ -180,7 +181,8 @@ class HomeController extends Controller
     public function testimonial()
     {
         $setting=SiteSetting::first();
-        return view('testimonial',compact('setting'));
+        $testimonials=Testimonial::where('status',1)->latest()->get();
+        return view('testimonial',compact('setting','testimonials'));
 
     }
 

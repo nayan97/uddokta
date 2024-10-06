@@ -87,6 +87,12 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
+                                                        <label for="first-name-vertical">support_req</label>
+                                                        <textarea name="support_req" class="form-control">{{ $personaldata->support_req ??'' }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
                                                         <label for="first-name-vertical">Head Line</label>
                                                         <textarea name="heading" class="form-control">{{ $personaldata->heading ??'' }}</textarea>
                                                     </div>

@@ -350,37 +350,39 @@
 
             <div class="row gx-4 gx-xl-5">
                 <div class="col-12 col-md-6 order-2 order-md-1">
+                    @foreach ($clients as $item)
                     <div class="brand-wrap d-flex">
-                        @foreach ($clients as $item)
                             <div class="brand-box">
-                                @if ($loop->iteration % 2 == 0)
-                                    <div class="brand d-flex justify-content-center align-items-center"><img src="{{ $item->image }}" width="80%" alt="brand">
-                                    </div>
-                                @else        
-                                    <div class="brand d-flex justify-content-center align-items-center"><img src="{{ $item->image }}" style="width:900px" alt="brand">
-                                    </div>
+                           
+                                <div class="brand d-flex justify-content-center align-items-center"><img src="{{ $item->image }}" alt="brand">
+                                </div>
                                     
-                                @endif
                            
                        
                             </div>
-
-                            {{-- <div class="brand-box">
-                                <div class="brand d-flex justify-content-center align-items-center"><img src="{{ $item->image }}" alt="brand"></div>
-                                <div class="brand d-flex justify-content-center align-items-center"><img src="{{ asset('frontend/asset/img/brand/brand4.png') }}" alt="brand">
-                                </div>
-                            </div> --}}
-                        @endforeach
-                  
-                        {{-- <div class="brand-box">
-                            <div class="brand d-flex justify-content-center align-items-center"><img src="{{ asset('frontend/asset/img/brand/brand3.png') }}" alt="brand"></div>
-                            <div class="brand d-flex justify-content-center align-items-center"><img src="{{ asset('frontend/asset/img/brand/brand4.png') }}" alt="brand"></div>
                         </div>
-                        <div class="brand-box">
-                            <div class="brand d-flex justify-content-center align-items-center"><img src="{{ asset('frontend/asset/img/brand/brand5.png') }}" alt="brand"></div>
-                            <div class="brand d-flex justify-content-center align-items-center"><img src="{{ asset('frontend/asset/img/brand/brand6.png') }}" alt="brand"></div>
-                        </div> --}}
-                    </div>
+                   
+                    @endforeach
+
+                        {{-- @foreach ($clients as $item)
+                            <div class="brand-box">
+                                @if ($loop->iteration % 2 == 0)
+                                    <div class="brand d-flex justify-content-center align-items-center"><img src="{{ $item->image }}" alt="brand">
+                                    </div>
+                                @else        
+                                <div class="brand d-flex justify-content-center align-items-center"><img src="{{ $item->image }}" alt="brand">
+                                </div>
+                                @endif
+                                    
+                        
+                    
+                            </div>
+               
+                         @endforeach
+                    --}}
+                        
+            
+                   
                 </div>
 
                 <div class="col-12 col-md-6 order-1 order-md-2">
@@ -524,7 +526,9 @@
                                 <h3 class="sub-title">{{ $plan->sub_title }}</h3>
                                 <h1 class="sub-heading my-4">${{$plan->price}}<span>/Month</span></h1>
 
-                                <button class="btn btn-primary rounded-pill">Get Started</button>
+                               
+                                <a class="btn btn-primary rounded-pill" href="{{ route('contact') }}">Get Started</a>
+
 
                                 <h6 class="mt-4">	{{$plan->pack_title}}:</h6>
                                 <ul class="">

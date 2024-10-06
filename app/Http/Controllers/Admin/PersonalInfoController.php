@@ -70,7 +70,8 @@ class PersonalInfoController extends Controller
            $infos->stack = $request->stack;
            $infos->intro = $request->intro;
            $infos->heading = $request->heading;
-           $infos->short_description = $request->short_description	;
+           $infos->short_description = $request->short_description;
+           $infos->support_req = $request->support_req;
            $infos->country = $request->country;
            $infos->language = $request->language;
             
@@ -122,7 +123,8 @@ class PersonalInfoController extends Controller
            $infos->stack = $request->stack;
            $infos->intro = $request->intro;
            $infos->heading = $request->heading;
-           $infos->short_description = $request->short_description	;
+           $infos->short_description = $request->short_description;
+           $infos->support_req = $request->support_req;
            $infos->country = $request->country;
            $infos->language = $request->language;
 
