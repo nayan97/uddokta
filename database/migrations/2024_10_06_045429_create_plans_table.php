@@ -24,7 +24,6 @@ return new class extends Migration
             $table->integer('free_optimizations');
             $table->boolean('support_247');
             $table->string('offer_tag');
-            $table->decimal('discount_percentage', 5, 2)->nullable();
             $table->timestamps();
         });
     }

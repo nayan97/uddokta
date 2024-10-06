@@ -36,7 +36,7 @@ class HomeController extends Controller
         $services=Service::where('status',1)->get();
         $projects=Project::where('status',1)->get();
         $clients=Client::where('status',1)->get();
-        $testimonials=Testimonial::where('status',1)->get();
+        $testimonials=Testimonial::where('status',1)->latest()->take(3)->get();
         $skills=MySkill::where('status',1)->latest()->take(3)->get();
         $awards=MyAwards::where('status',1)->latest()->take(6)->get();
         $teams=Team::where('status',1)->get();

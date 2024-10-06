@@ -62,16 +62,19 @@
                                                         <textarea type="text"  class="form-control" name="message"  placeholder="Description">{{ $data->message }}</textarea>
                                                     </div>
                                                 </div>
-                                                {{-- <div class="col-12">
+                                                <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="contact-info-vertical">Image</label><br>
-                                                        @if($data->image)
-                                                        <img src="{{ asset($data->image) }}" class="mt-3 mb-3" style="width:100px" alt="">
-
-                                                        @endif
-                                                        <input type="file" id="contact-info-vertical" class="form-control" name="image">
+                                                        <label for="first-name-vertical"> Video Message Link </label>
+                                                        <textarea type="text" class="form-control" name="video_link" value="{{old('video_link')}}" placeholder="Video link">{{ $data->video_link }}</textarea>
                                                     </div>
-                                                </div> --}}
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="contact-info-vertical">Videothum</label>
+                                                        <input type="file" id="contact-info-vertical" class="form-control" name="video_thum">
+                                                    </div>
+                                                </div>
+
 
                                                 <div class="col-6">
                                                     <div class="form-group">
@@ -125,3 +128,8 @@
 
 
 @endsection
+
+
+
+
+

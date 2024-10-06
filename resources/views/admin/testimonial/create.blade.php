@@ -57,16 +57,22 @@
 
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="first-name-vertical"> Video Message </label>
+                                                        <label for="first-name-vertical"> Message </label>
                                                         <textarea type="text" class="form-control" name="message" value="{{old('message')}}" placeholder="Message"></textarea>
                                                     </div>
                                                 </div>
-                                                {{-- <div class="col-12">
+                                                <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="contact-info-vertical">Image</label>
-                                                        <input type="file" id="contact-info-vertical" class="form-control" name="image">
+                                                        <label for="first-name-vertical"> Video Message Link </label>
+                                                        <textarea type="text" class="form-control" name="video_link" value="{{old('video_link')}}" placeholder="Video link"></textarea>
                                                     </div>
-                                                </div> --}}
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="contact-info-vertical">Video thum</label>
+                                                        <input type="file" id="contact-info-vertical" class="form-control" name="video_thum">
+                                                    </div>
+                                                </div>
 
                                                 <div class="col-6">
                                                     <div class="form-group">

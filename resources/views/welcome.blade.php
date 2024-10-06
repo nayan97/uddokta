@@ -594,37 +594,18 @@
                     </div>
                 </div> -->
 
-                <div class="col">
-                    <div class="testimonial-card">
-                        <img src="{{ asset('frontend/asset/img/video-thum1.jpg') }}" class="video-thum" alt="...">
+                @foreach ($testimonials as $item )
+                    <div class="col">
+                        <div class="testimonial-card">
+                            <img style="width: 416px; height:234px" src="{{ $item->video_thum }}" class="video-thum" alt="...">
 
-                        <!-- btn play -->
-                        <div class="btn-wrap">
-                            <a href="#" class="open-popup play-btn " title="Play Video"><i class="fa-brands fa-youtube"></i></a>
+                            <!-- btn play -->
+                            <div class="btn-wrap">
+                                <a href="{{ $item->video_link}}" class="open-popup play-btn " title="Play Video"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="testimonial-card">
-                        <img src="{{ asset('frontend/asset/img/video-thum2.jpg') }}" class="video-thum" alt="...">
-
-                        <!-- btn play -->
-                        <div class="btn-wrap">
-                            <a href="#" class="open-popup play-btn " title="Play Video"><i class="fa-brands fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="testimonial-card">
-                        <img src="{{ asset('frontend/asset/img/video-thum3.jpg') }}" class="video-thum" alt="...">
-
-                        <!-- btn play -->
-                        <div class="btn-wrap">
-                            <a href="#" class="open-popup play-btn " title="Play Video"><i class="fa-brands fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
 
             </div>
         </div>

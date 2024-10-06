@@ -22,7 +22,7 @@ class PlanSeeder extends Seeder
             'free_optimizations' => 1,
             'support_247' => true,
             'offer_tag' => 'Happy New Year Offer',
-            'discount_percentage' => 10.00,
+            
         ]);
 
         Plan::create([
@@ -37,7 +37,7 @@ class PlanSeeder extends Seeder
             'free_optimizations' => 3,
             'support_247' => true,
             'offer_tag' => 'Happy New Year Offer',
-            'discount_percentage' => 10.00,
+           
         ]);
 
         Plan::create([
@@ -52,7 +52,7 @@ class PlanSeeder extends Seeder
             'free_optimizations' => 5,
             'support_247' => true,
             'offer_tag' => 'Happy New Year Offer',
-            'discount_percentage' => 10.00,
+          
         ]);
     }
 }

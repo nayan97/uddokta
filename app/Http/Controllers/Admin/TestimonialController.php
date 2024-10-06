@@ -35,6 +35,7 @@ class TestimonialController extends Controller
         $data->name=$request->name;
         $data->designation=$request->designation;
         $data->message=$request->message;
+        $data->video_link=$request->video_link;
         $data->status=$request->status;
         $simage = $request->file('image');
         if($simage)
@@ -48,6 +49,21 @@ class TestimonialController extends Controller
             if($success)
             {
                 $data->image = $image_url;
+            }
+
+        }
+        $video_thum = $request->file('video_thum');
+        if($video_thum)
+        {
+            $image_name= uniqid();
+            $ext = strtolower($video_thum->getClientOriginalExtension());
+            $image_full_name = $image_name. '.' .$ext;
+            $upload_path = 'images/testimonial/';
+            $image_url = $upload_path.$image_full_name;
+            $success = $video_thum->move($upload_path, $image_full_name);
+            if($success)
+            {
+                $data->video_thum = $image_url;
             }
 
         }
@@ -82,7 +98,9 @@ class TestimonialController extends Controller
         $data->name=$request->name;
         $data->designation=$request->designation;
         $data->message=$request->message;
+        $data->video_link=$request->video_link;
         $data->status=$request->status;
+
         $simage = $request->file('image');
         if($simage)
         {
@@ -95,6 +113,22 @@ class TestimonialController extends Controller
             if($success)
             {
                 $data->image = $image_url;
+            }
+
+        }
+
+        $video_thum = $request->file('video_thum');
+        if($video_thum)
+        {
+            $image_name= uniqid();
+            $ext = strtolower($video_thum->getClientOriginalExtension());
+            $image_full_name = $image_name. '.' .$ext;
+            $upload_path = 'images/testimonial/';
+            $image_url = $upload_path.$image_full_name;
+            $success = $video_thum->move($upload_path, $image_full_name);
+            if($success)
+            {
+                $data->video_thum = $image_url;
             }
 
         }
