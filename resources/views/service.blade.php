@@ -349,7 +349,7 @@
                     <h1 class="heading mt-2">What Client Sayâ€™s About Me</h1>
 
                     <!-- carousel start  -->
-                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    {{-- <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                           <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active rounded-circle slide-btn" aria-current="true" aria-label="Slide 1"></button>
                           <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" class="slide-btn rounded-circle" aria-label="Slide 2"></button>
@@ -381,7 +381,39 @@
 
                         </div>
 
-                      </div>
+                    </div> --}}
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            @foreach ($testimonials as $index => $testimonial)
+                                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="{{ $index }}" class="rounded-circle slide-btn @if($loop->first) active @endif" aria-current="@if($loop->first) true @endif" aria-label="Slide {{ $index + 1 }}"></button>
+                            @endforeach
+                        </div>
+                    
+                        <div class="carousel-inner px-3">
+                            <!-- carousel-item start -->
+                            @foreach ($testimonials as $testimonial)
+                                <div class="carousel-item @if($loop->first) active @endif pt-4 pb-5">
+                                    <div class="testimonial-card">
+                                        <div class="d-flex">
+                                            <div class="client-img-wrap rounded-circle p-xl-2 p-1 me-3">
+                                                <img style="width: 60px" src="{{ $testimonial->image }}" class="rounded-circle" alt="">
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div>
+                                                    <h2 class="title mb-1">{{ $testimonial->name }}</h2>
+                                                    <small class="text-capitalize text-primary">Our client</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text mt-xl-4 mt-3">{{ $testimonial->message }}</p>
+                                        <img src="{{ asset('frontend/asset/img/quote.png') }}" class="qoute" alt="">
+                                    </div>
+                                </div>
+                            @endforeach
+                            <!-- carousel-item end -->
+                        </div>
+                    </div>
+                    
 
                 </div>
 
