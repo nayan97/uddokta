@@ -1,4 +1,9 @@
+
+@php
+    use Illuminate\Support\Str;
+@endphp
 @extends('frontend.layouts.master')
+
 @section('content')
  <!-- main content start -->
  <main class="">
@@ -320,12 +325,16 @@
                     <!-- portfolio-card start  -->
                     @foreach ($projects as $project )
                         <div class="card portfolio-card border-0">
-                            <img style="height:460px; width:420px" src="{{ $project->image_one }}" class="card-img rounded-0 text-center" alt="...">
+                            <img style="height:438px; width:468px" src="{{ $project->image_one }}" class="card-img rounded-0 text-center" alt="...">
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="sub-heading">UI Design <span class="ms-4">BRand Identity</span></h5>
                                 <h2 class="title mt-4 mb-2 text-capitalize" >{{ $project->name}}</h2>
+                                {{-- <p class="text mb-4">
+                                    {!! Str::words(htmlspecialchars_decode($project->project_overview), 20) !!}
+                                </p> --}}
                                 <p class="text mb-4">{!! $project->project_overview !!}</p>
-                                <a href="#" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                                {{-- <p class="text mb-4">{!! Str::of(htmlspecialchars_decode($project->project_overview)) -> words(20) !!}</p> --}}
+                                <a href="{{route('project.details', $project->slug)}}" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
                             </div>
                         </div>
                     @endforeach
