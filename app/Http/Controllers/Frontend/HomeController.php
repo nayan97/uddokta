@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Models\Faq;
 use App\Models\Blog;
+use App\Models\Plan;
 use App\Models\Team;
 use App\Models\Client;
 use App\Models\Message;
@@ -30,6 +31,7 @@ class HomeController extends Controller
     {
         $setting=SiteSetting::first();
         $infos=PersonalInfo ::first();
+        $plans = Plan::take(3)->get();
         $steps = WorkStep::first();
         $services=Service::where('status',1)->get();
         $projects=Project::where('status',1)->get();
@@ -39,7 +41,7 @@ class HomeController extends Controller
         $awards=MyAwards::where('status',1)->latest()->take(6)->get();
         $teams=Team::where('status',1)->get();
         $blogs=Blog::where('status',1)->latest()->get()->take(3);
-        return view('welcome',compact('setting','services','projects','clients','testimonials','teams','blogs','infos','skills','awards', 'steps'));
+        return view('welcome',compact('setting','services','projects','clients','testimonials','teams','blogs','infos','skills','awards', 'steps', 'plans'));
 
 
     }
@@ -57,10 +59,11 @@ class HomeController extends Controller
     public function service()
     {
         $setting=SiteSetting::first();
+        $plans = Plan::take(3)->get();
         $services=Service::where('status',1)->get();
         $testimonials=Testimonial::where('status',1)->latest()->get();
         $steps = WorkStep::first();
-        return view('service',compact('setting','services','testimonials','steps'));
+        return view('service',compact('setting','services','testimonials','steps','plans'));
 
     }
     public function serviceDetails($slug)
