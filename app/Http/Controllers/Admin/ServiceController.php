@@ -35,6 +35,7 @@ class ServiceController extends Controller
         $data->name=$request->name;
         $data->slug=preg_replace('/\s+/u', '-', trim($data->name));
         $data->description=$request->description;
+        $data->short_description=$request->short_description;
         $data->status=$request->status;
         $simage = $request->file('icon');
         if($simage)
@@ -98,6 +99,7 @@ class ServiceController extends Controller
         $data->name=$request->name;
         $data->slug=preg_replace('/\s+/u', '-', trim($data->name));
         $data->description=$request->description;
+        $data->short_description=$request->short_description;
         $data->status=$request->status;
         $simage = $request->file('icon');
         if($simage)

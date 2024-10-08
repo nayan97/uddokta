@@ -54,7 +54,8 @@
                     <div class="top-banner-img-wrap">
 
                         <div class="top-banner-img">
-                            <img src="{{ $infos->cover_photo}}" class="banner-man-one" alt="banner">
+                            {{-- <img src="{{ $infos->cover_photo}}" class="banner-man-one" alt="banner"> --}}
+                            <img style="width: 746px; height:734px" src="{{ $infos->cover_photo}}" class="banner-man-one" alt="banner">
                             <img src="{{ asset('frontend/asset/img/banner-line-one.png') }}" class="banner-line-one" alt="banner">
                             <img src="{{ asset('frontend/asset/img/banner-bg-one.png') }}" class="banner-bg-one" alt="banner">
 
@@ -95,7 +96,7 @@
                 <div class="row ">
                     <div class="col-12 order-2 order-md-1 col-md-6">
                         <div class="img-wrap position-relative ps-3 ps-sm-0">
-                            <img src="{{ $infos->profile_photo}}" class="photo" alt="...">
+                            <img style="width: 544px; height:650px" src="{{ $infos->profile_photo}}" class="photo" alt="...">
 
                             <div class="experience-year position-absolute rounded-circle p-3">
                                 <div class="mx-auto">
@@ -278,7 +279,7 @@
 
                         <div class="p-3">
                             <a href="#"><h5 class="title">{{ $service->name}}</h5></a>
-                            <p class="text">{!! $service->description !!}</p>
+                            <p class="text">{!! Str::words($service->short_description, 22, ' .....') !!}</p>
                         </div>
                         <span class="card-number">{{ $loop ->index + 1}}</span>
                     </div>
@@ -294,8 +295,6 @@
     </section>
     <!-- my services end -->
 
-
-    <!-- portfolio slider start  -->
     <section class="my-works " >
         <div class="works-wrap">
             <!-- section heading start  -->

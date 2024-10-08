@@ -39,7 +39,11 @@
 
                         <div class="p-3">
                             <a href="{{route('service.details', $service->slug)}}"><h5 class="title">{{$service->name}}</h5></a>
-                            <p class="text">{!! $service->description !!}</p>
+                            {{-- <p class="text">{!! $service->description !!}</p> --}}
+                            <p class="text">{!! Str::words($service->short_description, 22, '.....') !!}</p>
+
+                            
+
                         </div>
                         <span class="card-number">{{ $loop ->index + 1}}</span>
                     </div>

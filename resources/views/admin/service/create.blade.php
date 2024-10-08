@@ -47,6 +47,12 @@
                                                         <input type="text" class="form-control" name="name">
                                                     </div>
                                                 </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Short Description</label>
+                                                        <textarea name="short_description"  class="form-control" id="" cols="30" rows="3" placeholder="Short Description"></textarea>
+                                                    </div>
+                                                </div>
 
                                                 <div class="col-6">
                                                     <div class="form-group">

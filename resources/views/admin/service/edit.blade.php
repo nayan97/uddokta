@@ -48,6 +48,7 @@
                                                         <input type="text" class="form-control" name="name" value="{{ $data->name }}">
                                                     </div>
                                                 </div>
+                                     
 
                                                 <div class="col-6">
                                                     <div class="form-group">
@@ -65,6 +66,12 @@
                                                         <img src="{{ asset($data->image) }}" style="width:100px" alt="">
                                                         @endif
                                                         <input type="file" id="contact-info-vertical" class="form-control" name="image">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Short Description</label>
+                                                        <textarea type="text" name="short_description"  class="form-control" id="" cols="30" rows="3" placeholder="Short Description" >{!! $data->short_description !!}</textarea>
                                                     </div>
                                                 </div>
 
