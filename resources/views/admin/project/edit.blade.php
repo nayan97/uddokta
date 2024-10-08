@@ -61,6 +61,13 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Short Description</label>
+                                                        <textarea name="short_description"  class="form-control" id="" cols="30" rows="3" placeholder="Short Description">{!! $data->short_description !!}</textarea>
+                                                    </div>
+                                                </div>
+
 
                                                 <div class="col-12">
                                                     <div class="form-group">

@@ -62,7 +62,7 @@
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="password-vertical">Short Description</label>
-                                                        <textarea name="short_description" value="{{old('short_description')}} class="form-control" id="" cols="30" rows="3" placeholder="Short Description"></textarea>
+                                                        <textarea name="short_description"  class="form-control" id="" cols="30" rows="3" placeholder="Short Description"></textarea>
                                                     </div>
                                                 </div>
 

@@ -328,7 +328,7 @@
                                 {{-- <p class="text mb-4">
                                     {!! Str::words(htmlspecialchars_decode($project->project_overview), 20) !!}
                                 </p> --}}
-                                <p class="text mb-4">{!! $project->project_overview !!}</p>
+                                <p class="text mb-4">{!! Str::words($project->short_description, 22, ' .....') !!}</p>
                                 
                                 {{-- <p class="text mb-4">{!! Str::of(htmlspecialchars_decode($project->project_overview)) -> words(20) !!}</p> --}}
                                 <a href="{{route('project.details', $project->slug)}}" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
@@ -527,7 +527,7 @@
                                 <h1 class="sub-heading my-4">${{$plan->price}}<span>/{{$plan->type}}</span></h1>
 
                                
-                                <a class="btn btn-primary rounded-pill" href="{{ route('contact') }}">Get Started</a>
+                                <a class="btn btn-primary rounded-pill" href="{{ route('appointment') }}">Get Started</a>
 
 
                                 <h6 class="mt-4">	{{$plan->pack_title}}:</h6>
@@ -585,7 +585,7 @@
                     </div>
                 </div> -->
 
-                @foreach ($testimonials as $item )
+         @foreach ($testimonials as $item )
                     <div class="col">
                         <div class="testimonial-card">
                             <img style="width: 416px; height:234px" src="{{ $item->video_thum }}" class="video-thum" alt="...">
@@ -596,7 +596,22 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                        <!-- testimonial popup video start -->
+                        <div id="testimonials-video-popup" class="testimonial-popup">
+                            <span class="close-testimonial-btn close-popup "><i class="fa-solid fa-xmark"></i></span>
+                            <div class="testimonial-popup-content">
+
+                                <div class="video-wrap ">
+                                    <div class="ratio ratio-16x9   overflow-hidden">
+                                        <iframe src="{{ $item->video_link}}" title="YouTube video" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+         
+        @endforeach
 
             </div>
         </div>
@@ -606,7 +621,7 @@
 
     <!-- popup start here  -->
      <!-- top popup video  -->
-    <div id="top-video-popup" class="popup">
+    {{-- <div id="top-video-popup" class="popup">
         <div class="popup-content">
             <span class="close-top-btn close"><i class="fa-solid fa-xmark"></i></span>
 
@@ -616,7 +631,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- testimonial popup video  -->
     <!-- <div id="testimonial-video-popup" class="testimonial-popup">
@@ -632,19 +647,6 @@
         </div>
     </div> -->
 
-    <!-- testimonial popup video start -->
-    <div id="testimonials-video-popup" class="testimonial-popup">
-        <span class="close-testimonial-btn close-popup "><i class="fa-solid fa-xmark"></i></span>
-        <div class="testimonial-popup-content">
-
-            <div class="video-wrap ">
-                <div class="ratio ratio-16x9   overflow-hidden">
-                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video" allowfullscreen></iframe>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
 
  </main>

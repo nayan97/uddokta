@@ -50,6 +50,10 @@
                                     
                                                     <td>{{$item->email}}</td>
                                                     <td class="d-flex">
+                                                        {{-- <a href="{{ route('admin.user_message.edit', $item->id) }}"
+                                                            class="mr-4">
+                                                            <i class="fa fa-envelope"></i>
+                                                        </a> --}}
                                                         <form action="{{ route('admin.subcriber.destroy', $item->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this category?');">
                                                             @csrf
                                                             @method('DELETE')

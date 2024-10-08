@@ -38,6 +38,7 @@ class ProjectController extends Controller
         $data->name=$request->name;
         $data->slug=preg_replace('/\s+/u', '-', trim($data->name));
         $data->project_overview=$request->project_overview;
+        $data->short_description=$request->short_description;
         $data->client=$request->client;
         $data->company=$request->company;
         $data->location=$request->location;
@@ -122,6 +123,7 @@ class ProjectController extends Controller
         $data->name=$request->name;
         $data->slug=preg_replace('/\s+/u', '-', trim($data->name));
         $data->project_overview=$request->project_overview;
+        $data->short_description=$request->short_description;
         $data->client=$request->client;
         $data->company=$request->company;
         $data->location=$request->location;

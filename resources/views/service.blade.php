@@ -255,7 +255,7 @@
                                 <h1 class="sub-heading my-4">${{$plan->price}}<span>/{{$plan->type}}</span></h1>
 
                                
-                                <a class="btn btn-primary rounded-pill" href="{{ route('contact') }}">Get Started</a>
+                                <a class="btn btn-primary rounded-pill" href="{{ route('appointment') }}">Get Started</a>
 
 
                                 <h6 class="mt-4">	{{$plan->pack_title}}:</h6>

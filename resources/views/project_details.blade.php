@@ -51,6 +51,8 @@
                 <div class="row justify-content-between">
                     <div class="col-md-8 pe-lg-5 col-12">
                         <div class="blog-details-wrap">
+                            <p style="color:black">{!! $project->short_description !!}</p>
+                            <br>
                             <p style="color:black">{!! $project->project_overview !!}</p>
                         </div>
                     </div>

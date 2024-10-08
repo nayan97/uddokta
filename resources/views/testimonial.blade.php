@@ -36,7 +36,23 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    
+                    <!-- testimonial popup video start -->
+                    <div id="testimonials-video-popup" class="testimonial-popup">
+                        <span class="close-testimonial-btn close-popup "><i class="fa-solid fa-xmark"></i></span>
+                        <div class="testimonial-popup-content">
+
+                            <div class="video-wrap ">
+                                <div class="ratio ratio-16x9   overflow-hidden">
+                                    <iframe src="{{ $item->video_link}}" title="YouTube video"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                   @endforeach
 
 
                 </div>
@@ -45,21 +61,6 @@
         </section>
         <!-- testimonials end -->
 
-
-        <!-- testimonial popup video start -->
-        <div id="testimonials-video-popup" class="testimonial-popup">
-            <span class="close-testimonial-btn close-popup "><i class="fa-solid fa-xmark"></i></span>
-            <div class="testimonial-popup-content">
-
-                <div class="video-wrap ">
-                    <div class="ratio ratio-16x9   overflow-hidden">
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
 
 
