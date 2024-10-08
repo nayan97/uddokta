@@ -67,35 +67,8 @@
                                                         <input type="text" class="form-control" name="pack_title" value="{{ $data->pack_title }}">
                                                     </div>
                                                 </div> 
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label for="password-vertical">Analytics Campaigns</label>
-                                                        <input type="number" class="form-control" name="analytics_campaigns" value="{{ $data->analytics_campaigns }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label for="password-vertical">Keywords</label>
-                                                        <input type="number" class="form-control" name="keywords" value="{{ $data->keywords }}">
-                                                    </div>
-                                                </div>    <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label for="password-vertical">Social_media_reviews</label>
-                                                        <input type="number" class="form-control" name="social_media_reviews" value="{{ $data->social_media_reviews }}">
-                                                    </div>
-                                                </div>    
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label for="password-vertical">Free optimizations</label>
-                                                        <input type="number" class="form-control" name="free_optimizations" value="{{ $data->free_optimizations }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label for="password-vertical">Support</label>
-                                                        <input type="number" class="form-control" name="support_247" value="{{ $data->support_247 }}">
-                                                    </div>
-                                                </div>
+                                               
+                                                
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="password-vertical">Offer Tag</label>

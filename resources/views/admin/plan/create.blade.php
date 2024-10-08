@@ -42,24 +42,75 @@
 
                                         <div class="form-body">
                                             <div class="row">
-                                                <div class="col-12">
+                                                <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="password-vertical">Name</label>
-                                                        <input type="text" class="form-control" name="name"">
+                                                        <input type="text" class="form-control" name="name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Sub Title</label>
+                                                        <input type="text" class="form-control" name="sub_title">
+                                                    </div>
+                                                </div>  
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Price</label>
+                                                        <input type="number" class="form-control" name="price" id="price" required min="1">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Package Title</label>
+                                                        <input type="text" class="form-control" name="pack_title">
+                                                    </div>
+                                                </div> 
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Offer Tag</label>
+                                                        <input type="text" class="form-control" name="offer_tag" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="contact-info-vertical">Image</label>
+                                                        <input type="file" id="contact-info-vertical" class="form-control" name="image">
+                                                
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Type</label>
+                                                        <select name="type" id="" class="form-control">
+                                                            <option value="month">Month</option>
+                                                            <option value="year">Year</option>
+                                                            <option value="life time">Life Time</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Status</label>
+                                                        <select name="status" id="" class="form-control">
+                                                            <option value="1">Active</option>
+                                                            <option value="0">Inactive</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                           
 
                                                 <div class="col-6">
                                                     <div class="form-group">
+                                                        <label for="password-vertical">Our Offer</label>
 
                                                         <div id="inputContainer">
                                                             <div class="input-group">
                                                                 <input class="form-control" type="text" name="values[]" placeholder="Value">
-                                                                <button type="button" onclick="removeInput(this)"><i class="fa fa-trash text-danger"></i></button>
+                                                                <button class="btn" type="button" onclick="removeInput(this)"><i class="fa fa-trash text-danger"></i></button>
                                                             </div>
                                                         </div>
-                                                        <button type="button" id="addInputBtn"><i class="feather icon-edit"></i></button>
+                                                        <button class="btn btn-primary" type="button" id="addInputBtn"><i class="feather icon-edit"></i></button>
                                                         <pre id="output"></pre>
 
                                                     </div>
@@ -74,6 +125,8 @@
                                             </div>
                                         </div>
                                     </form>
+                                  
+                                    
                                 </div>
                             </div>
                         </div>
@@ -98,8 +151,8 @@
         inputGroup.classList.add('input-group');
 
         inputGroup.innerHTML = `
-            <input type="text" name="values[]" placeholder="Value">
-            <button type="button" onclick="removeInput(this)">Remove</button>
+            <input class="form-control" type="text" name="values[]" placeholder="Value">
+            <button class="btn" type="button" onclick="removeInput(this)"><i class="fa fa-trash text-danger"></i></button>
         `;
 
         inputContainer.appendChild(inputGroup);

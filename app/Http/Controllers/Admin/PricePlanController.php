@@ -32,6 +32,52 @@ class PricePlanController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'sub_title' => 'required',
+            'price' => 'required|numeric|min:0|max:99999999.99',
+            'image' => 'required',  
+            'pack_title' => 'required',
+            'offer_tag' => 'nullable',
+            'values' => 'nullable',
+        ]);
+
+        $values = $request->input('values');
+
+        $plan = new Plan();
+
+        
+        $plan->values = json_encode($values);
+       
+        $plan->name = $request->name;
+        $plan->sub_title = $request->sub_title;
+        $plan->price = $request->price;
+        $plan->type = $request->type;
+        $plan->status = $request->status;
+        $plan->pack_title = $request->pack_title;
+        $plan->offer_tag = $request->offer_tag;
+      
+
+        
+        $simage = $request->file('image');
+        if($simage)
+        {
+            $image_name= uniqid();
+            $ext = strtolower($simage->getClientOriginalExtension());
+            $image_full_name = $image_name. '.' .$ext;
+            $upload_path = 'images/priceplan/';
+            $image_url = $upload_path.$image_full_name;
+            $success = $simage->move($upload_path, $image_full_name);
+            if($success)
+            {
+                $plan->image = $image_url;
+            }
+
+        }
+
+        $plan->save();
+        Toastr::success('Data saved succesfully');
+        return redirect()->back();
         //
     }
 
@@ -111,6 +157,9 @@ class PricePlanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $plan=Plan::find($id);
+        $plan->delete();
+        Toastr::success('Data Deleted successfull');
+        return redirect()->back();
     }
 }

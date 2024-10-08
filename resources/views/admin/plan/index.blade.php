@@ -14,7 +14,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active"><a href="{{route('admin.testimonial.index')}}">Price Plan</a>
+                                <li class="breadcrumb-item active"><a href="{{route('admin.priceplan.index')}}">Price Plan</a>
                                 </li>
                             </ol>
                         </div>
@@ -31,9 +31,9 @@
                             <div class="card-header">
                                 <h4 class="card-title">Price Plan List</h4>
                                 <h4 class="card-title">
-                                    {{-- <a href="{{route('admin.testimonial.create')}}" class="bg-primary btn rounded white">
-                                        <i class="feather icon-plus"></i>Add Testimonial
-                                    </a> --}}
+                                    <a href="{{route('admin.priceplan.create')}}" class="bg-primary btn rounded white">
+                                        <i class="feather icon-plus"></i>Add Plans
+                                    </a>
                                 </h4>
                             </div>
                             <div class="card-content">
@@ -46,6 +46,7 @@
                                                     <th>Name</th>
                                                     <th>Sub Title</th>
                                                     <th>price</th>
+                                                    <th>status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -57,15 +58,22 @@
                                                     <td>{{$item->name}}</td>
                                                     <td>{{ $item->sub_title }}</td>
                                                     <td>{{ $item->price }}</td>
+                                                    <td>
+                                                        @if($item->status == 1)
+                                                            <span class="badge bg-success">Active</span>
+                                                        @else
+                                                            <span class="badge bg-warning">Inactive</span>
+                                                        @endif
+                                                    </td>
                                                     <td class="d-flex">
-                                                        <a href="{{route('admin.priceplan.edit',$item->id)}}" class="mr-4">
+                                                        {{-- <a href="{{route('admin.priceplan.edit',$item->id)}}" class="mr-4">
                                                             <i class="feather icon-edit"></i>
-                                                        </a>
-                                                        {{-- <form action="{{ route('admin.testimonial.destroy', $item->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this category?');">
+                                                        </a> --}}
+                                                        <form action="{{ route('admin.priceplan.destroy', $item->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this category?');">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="border-0">  <i class="fa fa-trash text-danger"></i></button>
-                                                        </form> --}}
+                                                        </form>
                                                     </td>
 
                                                 </tr>

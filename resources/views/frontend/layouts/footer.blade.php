@@ -68,7 +68,7 @@
         <div class="container">
             <div class="row ">
                 <div class="col-6">
-                    <a href="#"><img src="{{ asset($setting->icon_light) }}" alt=""></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset($setting->icon_light) }}" alt=""></a>
                 </div>
                 <div class="col-6 text-end text-white">
                     <span class="mt-2 d-block">  2024 &copy; All Rights Reserved</span>

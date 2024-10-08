@@ -519,12 +519,12 @@
                 <div class="row mt-5 g-4 g-xl-5 row-cols-1 row-cols-lg-3">
                     @foreach ( $plans as $plan )
                         <div class="col">
-                        <div class="pricing-card">
+                        <div style="min-height: 635px; min-width:400px" class="pricing-card">
                             <div class="card-body p-4 p-xl-5">
                                 <img src="{{ $plan->image }}" alt="" style="margin-top: -10px;">
                                 <h2 class="title text-capitalize d-inline-block ms-2">{{ $plan->name }}</h2>
                                 <h3 class="sub-title">{{ $plan->sub_title }}</h3>
-                                <h1 class="sub-heading my-4">${{$plan->price}}<span>/Month</span></h1>
+                                <h1 class="sub-heading my-4">${{$plan->price}}<span>/{{$plan->type}}</span></h1>
 
                                
                                 <a class="btn btn-primary rounded-pill" href="{{ route('contact') }}">Get Started</a>
@@ -532,21 +532,8 @@
 
                                 <h6 class="mt-4">	{{$plan->pack_title}}:</h6>
                                 <ul class="">
-                                    <li class="text mt-xl-3 mt-2"><img src="{{asset('frontend/asset/img/check.png')}}" class="me-2" alt="">{{$plan->analytics_campaigns}} Analytics Campaign</li>
-                                    <li class="text mt-xl-3 mt-2"><img src="{{asset('frontend/asset/img/check.png')}}" class="me-2" alt="">{{$plan->sub_title}}Keywords</li>
-                                    <li class="text mt-xl-3 mt-2"><img src="{{asset('frontend/asset/img/check.png')}}" class="me-2" alt="">{{$plan->keywords}} Social Media Reviews</li>
-                                    <li class="text mt-xl-3 mt-2">
-                                        <img src="{{ asset('frontend/asset/img/check.png') }}" class="me-2" alt="">
-                                        {{ $plan->social_media_reviews }} Social Media Reviews
-                                    </li>
-                                    <li class="text mt-xl-3 mt-2">
-                                        <img src="{{ asset('frontend/asset/img/check.png') }}" class="me-2" alt="">
-                                        {{ $plan->free_optimizations }} Free Optimization
-                                    </li>
-                                    <li class="text mt-xl-3 mt-2">
-                                        <img src="{{ asset('frontend/asset/img/check.png') }}" class="me-2" alt="">
-                                        Check 24/7 Support
-                                    </li>
+                                    <li class="text mt-xl-3 mt-2"><img src="{{asset('frontend/asset/img/check.png')}}" class="me-2" alt="">{{$plan->values}}</li>
+                     
 
                                 </ul>
                             </div>

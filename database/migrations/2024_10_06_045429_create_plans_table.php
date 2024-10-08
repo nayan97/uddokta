@@ -18,11 +18,7 @@ return new class extends Migration
             $table->decimal('price', 8, 2);
             $table->text('image');
             $table->string('pack_title');
-            $table->integer('analytics_campaigns');
-            $table->integer('keywords');
-            $table->integer('social_media_reviews');
-            $table->integer('free_optimizations');
-            $table->boolean('support_247');
+            $table->json('values[]');
             $table->string('offer_tag');
             $table->timestamps();
         });
