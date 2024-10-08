@@ -23,8 +23,9 @@ class PricePlanController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.plan.create');
     }
+        //
 
     /**
      * Store a newly created resource in storage.

@@ -47,6 +47,16 @@
      <link rel="stylesheet" type="text/css" href="{{asset('backend/assets/vendors/')}}/css/tables/datatable/datatables.min.css">
     @yield('css')
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+    <style>
+        .input-group {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .input-group input {
+            margin-right: 10px;
+        }
+    </style>
     
     
 </head>

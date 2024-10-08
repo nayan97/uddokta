@@ -159,21 +159,12 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 <script>
-    $('#summernote').summernote({
-      placeholder: 'Description Text here',
-      tabsize: 2,
-      styleTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-      height: 120,
-      toolbar: [
-        ['style', ['style']],
-        ['font', ['bold', 'underline', 'clear']],
-        ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['table', ['table']],
-        ['insert', ['link', 'picture', 'video']],
-        ['view', ['fullscreen', 'codeview', 'help']]
-      ]
-    });
+		$(document).ready(function(){
+				$("#summernote").summernote({
+					height: '200px'
+				});
+
+			});
   </script>
 
 

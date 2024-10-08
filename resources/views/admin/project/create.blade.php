@@ -59,9 +59,15 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Short Description</label>
+                                                        <textarea name="short_description" value="{{old('short_description')}} class="form-control" id="" cols="30" rows="3" placeholder="Short Description"></textarea>
+                                                    </div>
+                                                </div>
 
                                                 <div class="col-12">
+                                                    
                                                     <div class="form-group">
                                                         <label for="first-name-vertical">Project Overview </label>
                                                         <textarea type="text" id="summernote"  class="form-control" name="project_overview" value="{{old('project_overview')}}" placeholder="Project Overview"></textarea>
@@ -148,21 +154,12 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 <script>
-    $('#summernote').summernote({
-      placeholder: 'Description Text here',
-      tabsize: 2,
-      styleTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-      height: 120,
-      toolbar: [
-        ['style', ['style']],
-        ['font', ['bold', 'underline', 'clear']],
-        ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['table', ['table']],
-        ['insert', ['link', 'picture', 'video']],
-        ['view', ['fullscreen', 'codeview', 'help']]
-      ]
-    });
+		$(document).ready(function(){
+				$("#summernote").summernote({
+					height: '220px'
+				});
+
+			});
   </script>
 
 

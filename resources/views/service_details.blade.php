@@ -29,9 +29,13 @@
         <!--blog details section start-->
         <section class="blog-details ptb-120">
             <div class="container">
+              
                 <img src="{{ asset($service->image) }}" style="width:100%;height:400px;object-fit:cover" alt="">
                 <div class="row justify-content-between">
                     <div class="col-lg-12 pe-lg-5">
+                        <div class="blog-details-wrap mt-3 mb-3">
+                            <p style="color:black">{!! $service->short_description !!}</p>
+                        </div>
                         <div class="blog-details-wrap mt-3 mb-3">
                             <p style="color:black">{!! $service->description !!}</p>
                         </div>

@@ -278,7 +278,7 @@
                         </div>
 
                         <div class="p-3">
-                            <a href="#"><h5 class="title">{{ $service->name}}</h5></a>
+                            <a href="{{route('service.details', $service->slug)}}"><h5 class="title">{{ $service->name}}</h5></a>
                             <p class="text">{!! Str::words($service->short_description, 22, ' .....') !!}</p>
                         </div>
                         <span class="card-number">{{ $loop ->index + 1}}</span>
@@ -329,6 +329,7 @@
                                     {!! Str::words(htmlspecialchars_decode($project->project_overview), 20) !!}
                                 </p> --}}
                                 <p class="text mb-4">{!! $project->project_overview !!}</p>
+                                
                                 {{-- <p class="text mb-4">{!! Str::of(htmlspecialchars_decode($project->project_overview)) -> words(20) !!}</p> --}}
                                 <a href="{{route('project.details', $project->slug)}}" class="text-uppercase link">View Case Study <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
                             </div>
